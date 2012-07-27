@@ -11,7 +11,10 @@
     <%= sanitize product.description %>
     <div class="price_line">
       <span class="price"><%= number_to_currency(product.price) %></span>
-      <%= button_to 'Add to Cart', line_items_path(:product_id => product) %>
+      <!--使用button_to创建到create action的链接。现在我们利用它发送AJAX请求，
+      	我们在调用中添加一个:remote => true参数-->
+      <%= button_to 'Add to Cart', line_items_path(:product_id => product),
+         :remote => true %>
     </div>
   </div>
 <% end %>

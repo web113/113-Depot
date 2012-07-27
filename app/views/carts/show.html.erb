@@ -1,7 +1,8 @@
 <div class="cart_title">Your Cart</div>
 
 <table>
-	<% for item in @cart.line_items %> 
+	<%= render(@cart.line_items)%>
+    <!--<% for item in @cart.line_items %>-->
 	<tr>
       	<!--购物车显示商品数量及商品名称,且改成表格形式了-->
       	<td><%= item.quantity %> &times; </td>
