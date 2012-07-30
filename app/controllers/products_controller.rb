@@ -80,13 +80,4 @@ class ProductsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
-  def who_bought
-    @product = Product.find(params[:id])
-    respond_to do |format|
-      format.atom   #Rails将会寻找名为who_bought.atom.builder的template(app/views/products/who_bought.atom.builder):
-      format.xml {render :xml => @product}
-    end
-  end
-  
 end

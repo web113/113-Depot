@@ -13,14 +13,7 @@
         <%= @page_title || "Pragmatic Bookshelf" %>
       </div>
       <div id="columns">
-        <div id="side">     	
-        	<div id="cart">
-        		<% if @cart%>
-        	    <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do%> <!--若购物车为空则不显示-->
-      			   <%= render @cart%>
-      		    <%end%>
-      		    <%end%>
-        	</div>
+        <div id="side">
           <a href="http://www....">Home</a><br>
           <a href="http://www..../fag">Questions</a><br>
           <a href="http://www..../news">News</a><br>
