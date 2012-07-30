@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pragprog Books Online Store</title>
+        <%= stylesheet_link_tag "scaffold" %>
+        <%= stylesheet_link_tag "depot", :media => "all" %>
+        <%= javascript_include_tag :defaults %>
+        <%= csrf_meta_tag %>
+	</head>
+    <body id="store">
+      <div id="banner">
+        <%= image_tag("logo.png") %>
+        <%= @page_title || "Pragmatic Bookshelf" %>
+      </div>
+      <div id="columns">
+        <div id="side">     	
+        	<div id="cart">
+        		<% if @cart%>
+        	    <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do%> <!--若购物车为空则不显示-->
+      			   <%= render @cart%>
+      		    <%end%>
+      		    <%end%>
+        	</div>
+          <a href="http://www....">Home</a><br>
+          <a href="http://www..../fag">Questions</a><br>
+          <a href="http://www..../news">News</a><br>
+          <a href="http://www..../contact">Contact</a><br>
+        </div>
+        <div id="main">
+          <%= yield %>
+        </div>
+      </div>
+    </body>
+</html>
