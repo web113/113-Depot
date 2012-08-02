@@ -21,12 +21,14 @@
         <%= @page_title || t('.title') %>
       </div>
       <div id="columns">
-        <div id="side">     	
-        		<% if @cart%>
+        <div id="side"> 
+           <div id ="cart">    	
+        	<% if @cart%>
         	    <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do%> <!--若购物车为空则不显示-->
       			   <%= render @cart%>
       		    <%end%>
-      		    <%end%>
+      		<%end%>
+		   </div>
           <a href="http://www...."><%= t('.home') %></a><br>
           <a href="http://www..../fag"><%= t('.questions') %></a><br>
           <a href="http://www..../news"><%= t('.news') %></a><br>
