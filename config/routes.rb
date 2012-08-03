@@ -1,4 +1,6 @@
 Depot::Application.routes.draw do
+  resources :categories
+
   get 'admin' => 'admin#index'
 
   controller :sessions do
@@ -18,6 +20,11 @@ Depot::Application.routes.draw do
 	  resources :carts
 	  
 	  resources :searches
+	  
+	  resources :help	  
+	  resources :questions
+	  resources :news
+	  resources :contacts
 
 
 	  resources :products do
