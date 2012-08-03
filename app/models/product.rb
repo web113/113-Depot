@@ -13,7 +13,17 @@ class Product < ActiveRecord::Base
       return false
     end
   end
-
+  
+  #-------------search-------------------------
+  def self.search(query)
+    if query 
+      find(:all, :conditions => ['title LIKE ?', "%#{query}%"])
+    else
+      find(:all)
+    end
+  end
+  #----------------------------------------------
+  
   validates :title, :description, :image_url, :presence => true
   validates :price, :numericality => {:greater_than_or_equal_to => 0.01}
   validates :title, :uniqueness => true

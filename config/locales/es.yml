@@ -51,3 +51,7 @@ es:
         other:     "%{count} errors han impedido que este %{model} se guarde"
         
   thanks:          "Gracias por su pedido"
+  
+  searches:
+    index:
+      add_html:        "A&ntilde;adir al Carrito"

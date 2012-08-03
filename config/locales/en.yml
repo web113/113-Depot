@@ -50,5 +50,11 @@ en:
         one:       "1 error prohibited this order from being saved"
         other:     "%{count} errors prohibited this order from being saving"
         
+  
   thanks:          "Thank you for your order"
+   
+           
+  searches:
+    index:
+      add_html:        "Add to Cart"
       

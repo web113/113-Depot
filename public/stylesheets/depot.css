@@ -216,8 +216,15 @@
 	margin: 0.5em 0;
 }
 
-
+/*international*/
 .locale {
 	float: right;
 	padding-top: 0.2em;
+}
+
+/*serach*/
+.search {
+	float: right;
+	padding-top: 0.2em;
+	
 }
