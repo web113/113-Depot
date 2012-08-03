@@ -37,3 +37,52 @@ Product.create(:title => 'Rails Test Prescriptions',
       </p>},
   :image_url => '/images/rtp.jpg',
   :price => 43.75)
+#...
+
+Product.create(:title => 'The Curious Case of Benjamin Button',
+  :description => 
+    %{<p>
+        <em>The Curious Case of Benjamin Button</em> is a story about....
+        blablabla...
+      </p>},
+  :image_url => '/images/benjamin.jpg',
+  :price => 23.75)
+# . . .
+
+Product.create(:title => 'Debug It!',
+  :description => 
+    %{<p>
+        <em>Debug It!</em> is a story about....
+        blablabla...
+      </p>},
+  :image_url => '/images/debug.jpg',
+  :price => 19.99)  
+# . . .
+
+Product.create(:title => 'Lowboy',
+  :description => 
+    %{<p>
+        <em>Lowboy</em> is a story about....
+        blablabla...
+      </p>},
+  :image_url => '/images/lowboy.jpg',
+  :price => 22.99)
+# . . .
+
+Product.create(:title => 'Waterfront',
+  :description => 
+    %{<p>
+        <em>Waterfront</em> is a story about....
+        blablabla...
+      </p>},
+  :image_url => '/images/waterfront.jpg',
+  :price => 11.99)
+# ...
+
+User.create(:name => 'sherry',
+  :password => '123', :password_confirmation => '123')
+# ...
+
+User.create(:name => '113',
+  :password => '113', :password_confirmation => '113')
+# ...

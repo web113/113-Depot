@@ -5,7 +5,7 @@ class StoreController < ApplicationController
     if params[:set_locale]
       redirect_to store_path(:locale => params[:set_locale])
     else
-      @product = Product.all
+      @product = Product.paginate :page =>params[:page],:per_page => 5
       @cart = current_cart
     end
   end

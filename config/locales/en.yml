@@ -9,7 +9,7 @@ en:
   store:
    index:
      title_html: "Your Pragmatic Catalog"
-     add:        "Add to Cart"
+     add_html:        "Add to Cart"
   carts:
     cart:
       title:     "Your Cart"
