@@ -43,7 +43,9 @@
           <%= link_to t('.questions'), {:controller => "questions", :action => "index" } %> <br>
           <%= link_to t('.news'), {:controller => "news", :action => "index" } %> <br>
           <%= link_to t('.contact'), {:controller => "contacts", :action => "index" } %> <br>
+          <%= link_to 'Cart', {:controller => "carts", :action => "index" } %><br />
           <%= link_to 'Help', {:controller => "help", :action => "index" } %><br />
+          <%= link_to 'Login', {:controller => "sessions", :action => "new" } %><br />
 
           <% if session[:user_id] %>
             <br />

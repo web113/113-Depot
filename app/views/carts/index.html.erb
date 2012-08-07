@@ -8,11 +8,15 @@
   </tr>
 
 <% @carts.each do |cart| %>
-  <tr>
-    <td><%= link_to 'Show', cart %></td>
-    <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-    <td><%= link_to 'Destroy', cart, :confirm => 'Are you sure?', :method => :delete %></td>
+	<% for item in cart.line_items %>
+  	<tr>
+        <td><%= item.quantity %> &times; </td>
+      	<td><%= item.product.title %></td>
+      	<td class = "item_price"><%= number_to_currency(item.total_price)%></td>
+      	<td><%= button_to 'delete', item, :method => :delete,
+         :confirm => 'Are you sure?' %></td>
   </tr>
+  <%end%>
 <% end %>
 </table>
 
