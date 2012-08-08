@@ -17,6 +17,11 @@ class Cart < ActiveRecord::Base
     line_items.to_a.sum{ |item| item.total_price}
   end
   
+  #def add_quantity(item_id)
+  #  current_item = line_items.where(:id => item_id)
+  #  current_item.quantity += 1
+  #end
+  
   #def total_items
   #  line_items.sum(:quantity)
   #end

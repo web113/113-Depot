@@ -1,3 +1,12 @@
+<script language="JavaScript">
+function add(){
+	item.quantity = item.quantity+1;
+}
+</script>
+
+
+
+
 <h1>Listing carts</h1>
 
 <table class="cart_detail">
@@ -27,6 +36,8 @@
 <td><%= item.quantity %></td>
 <td><%= number_to_currency(item.product.price*item.quantity) %></td>
 <td><%= button_to 'delete', item, :method => :delete, :confirm => 'Are you sure?' %></td>
+<!--><td><%= tag "input",{"type"=>"button", "value"=>"+", "onclick"=>"javascript:add()"}%></td>-->
+
 <td><%= button_to '+'%></td>
 </tr>
 <%end%>

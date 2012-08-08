@@ -90,4 +90,11 @@ class CartsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def add_quantity
+    item = Line_item.find(params[:id])
+    @cart = current_cart
+    @cart.item.quantity += 1
+  end
+  
 end
