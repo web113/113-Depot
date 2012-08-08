@@ -273,4 +273,11 @@
 	
 }
 
+#cart tr {
+  display: inline-block;
+}
 
+.line_item input {
+  display: inline-block;
+  width: 40px;
+}
