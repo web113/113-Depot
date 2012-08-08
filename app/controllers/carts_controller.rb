@@ -4,7 +4,7 @@ class CartsController < ApplicationController
   # GET /carts
   # GET /carts.xml
   def index
-    @carts = Cart.all
+    #@carts = Cart.all
     @cart = current_cart
 
     respond_to do |format|

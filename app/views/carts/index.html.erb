@@ -1,25 +1,34 @@
 <h1>Listing carts</h1>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table class="cart_detail">
+<tr>
+<th colspan="2">Product</th>
+<th width = "100">Price</th>
+<th width = "100">Quantity</th>
+<th width = "100">Total</th>
+<th width = "100">button</th>
+</tr>
 
-<% @carts.each do |cart| %>
-	<% for item in cart.line_items %>
-  	<tr>
-        <td><%= item.quantity %> &times; </td>
-      	<td><%= item.product.title %></td>
-      	<td class = "item_price"><%= number_to_currency(item.total_price)%></td>
-      	<td><%= button_to 'delete', item, :method => :delete,
-         :confirm => 'Are you sure?' %></td>
-  </tr>
-  <%end%>
-<% end %>
-</table>
+<tr class="alt_odd">
+<td height = "5" width = "120"></td>
+<td width = "180"></td>
+<td ></td>
+<td ></td>
+<td ></td>
+<td ></td>
 
-<br />
+</tr>
 
-<%= link_to 'New Cart', new_cart_path %>
+<% for item in @cart.line_items %>
+<tr class="<%= cycle('alt_even', 'alt_odd') %>" >
+<td height = "100"><%= image_tag(item.product.image_url) %></td>
+<td ><h3><%= item.product.title %></h3></td>
+<td><%= number_to_currency(item.product.price) %></td>
+<td><%= item.quantity %></td>
+<td><%= number_to_currency(item.product.price*item.quantity) %></td>
+<td><%= button_to 'delete', item, :method => :delete, :confirm => 'Are you sure?' %></td>
+<td><%= button_to '+'%></td>
+</tr>
+<%end%>
+
+<!--<%= link_to 'New Cart', new_cart_path %>-->

@@ -159,7 +159,7 @@
 
 /* mian page 的cart样式*/
 #store .cart_title{
-	font: 120% bold;
+	font: 200% bold;
 }
 
 #store .item_price, #store .title_line{
@@ -182,6 +182,48 @@
 	border-bottom: 1px dotted #595;
 	margin-bottom: 10px;
 }
+/*cart display*/
+.cart_detail{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    width:800px;
+  	border-collapse:collapse;
+}
+
+.cart_detail td, #cart .cart_detail th{
+	font-size:1em;
+    /*border:1px solid #98bf21;*/
+    padding:3px 7px 2px 7px; 
+}
+
+.cart_detail th 
+{
+  	font-size:1.1em;
+  	text-align:center;
+  	padding-top:5px;
+  	padding-bottom:4px;
+  	background-color: #EAF2D3;
+  	color: #000000;
+}
+
+.cart_detail tr.alt_even td 
+{
+	text-align:center;
+  	background-color:#EAF2D3;
+}
+
+.cart_detail tr.alt_odd td 
+{
+	text-align:center;
+  	background-color:#ffffff;
+}
+
+.cart_detail img {
+  width: 60px;
+  height: 80px;
+  margin: 10px 10px 10px 20px;
+  float: left;
+}
+
 
 /*Styles for order form*/
 .depot_form fieldset{
@@ -230,3 +272,5 @@
 	margin-right: 10px;
 	
 }
+
+
