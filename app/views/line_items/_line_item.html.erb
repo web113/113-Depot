@@ -1,12 +1,18 @@
 <% if line_item == @current_item%>
 <tr id ="current_item">
 <%else%>
-<tr class="line_item">
+<tr class="line_item" >
 <%end%>
 	<td class="item_quantity"><%= line_item.quantity %>&times; </td>
-	<td><%= line_item.product.title %></td>
+	<td class="item_title"><%= line_item.product.title %></td>
 	<td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
 
-</tr>
+    <td class="hidden">
+      <%= button_to "update", line_items_path(
+        :product_id => line_item.product, 
+        :modify => "true"
+      ), :remote => true %>
+    </td>
+    <td class="hidden"><%= button_to "del", line_item, :method => :delete, :remote => true %></td>
 </tr>
 

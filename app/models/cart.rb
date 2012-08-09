@@ -12,6 +12,12 @@ class Cart < ActiveRecord::Base
     end
     current_item
   end
+
+  def modify_product(product_id, number)
+    current_item = line_items.where(:product_id => product_id).first
+    current_item.quantity = number
+    current_item
+  end
   
   def total_price
     line_items.to_a.sum{ |item| item.total_price}

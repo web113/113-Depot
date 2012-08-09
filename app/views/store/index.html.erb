@@ -13,7 +13,7 @@
       <span class="price"><%= number_to_currency(product.price) %></span>
       <!--使用button_to创建到create action的链接。现在我们利用它发送AJAX请求，
       	我们在调用中添加一个:remote => true参数-->
-      <%= button_to t('.add_html'), line_items_path(:product_id => product),
+        <%= button_to t('.add_html'), line_items_path(:product_id => product, :modify => "false"),
          :remote => true %>
     </div>
   </div>

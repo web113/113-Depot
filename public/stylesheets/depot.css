@@ -277,7 +277,32 @@
   display: inline-block;
 }
 
-.line_item input {
+#current_item input, .line_item input {
   display: inline-block;
   width: 40px;
+}
+
+.line_item, #current_item {
+  cursor: move;
+}
+
+.line_item:hover, #current_item:hover {
+  background-color: #1F7A1F;
+}
+
+.item_quantity {
+  cursor: text;
+  width: 40px;
+}
+
+.item_title {
+  width: 100px;
+}
+
+.hidden {
+  display: none;
+}
+
+.total {
+  width: 144px;
 }

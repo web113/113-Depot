@@ -25,7 +25,7 @@ class UserStoriesTest < ActionController::IntegrationTest
     assert_response :success
     assert_template "index"
     
-    xml_http_request :post, '/line_items', :product_id => ruby_book.id
+    xml_http_request :post, '/line_items', :product_id => ruby_book.id, :modify => "false"
     assert_response :success 
     
     cart = Cart.find(session[:cart_id])

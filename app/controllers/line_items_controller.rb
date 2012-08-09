@@ -44,13 +44,20 @@ class LineItemsController < ApplicationController
   def create
     @cart = current_cart
     product = Product.find(params[:product_id])
-    @line_item = @cart.add_product(product.id) #使用高级add_product的方法
+    @modify = params[:modify]
+    
+    if @modify == "false"
+      @line_item = @cart.add_product(product.id) #使用高级add_product的方法
+    else
+      number = params[:number].to_i
+      @line_item = @cart.modify_product(product.id, number) #使用高级add_product的方法
+    end
 
     respond_to do |format|
       if @line_item.save
         #format.html { redirect_to(@line_item.cart, :notice => 'Line item was successfully created.') }
         format.html { redirect_to(store_url)}
-        format.js   {@current_item = @line_item}
+        format.js   {@current_item = @line_item }
         format.xml  { render :xml => @line_item, :status => :created, :location => @line_item }
       else
         format.html { render :action => "new" }
@@ -79,10 +86,12 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1.xml
   def destroy
     @line_item = LineItem.find(params[:id])
+    @cart = @line_item.cart
     @line_item.destroy
 
     respond_to do |format|
       format.html { redirect_to(carts_url) }
+      format.js
       format.xml  { head :ok }
     end
   end
