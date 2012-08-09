@@ -12,7 +12,8 @@ Product.create(:title => 'Web Design for Developers',
         all the way to implementation.
       </p>},
   :image_url =>   '/images/wd4d.jpg',    
-  :price => 42.95)
+  :price => 42.95,
+  :cate =>'IT')
 # . . .
 Product.create(:title => 'Programming Ruby 1.9',
   :description =>
@@ -22,7 +23,8 @@ Product.create(:title => 'Programming Ruby 1.9',
         you should add Ruby to your toolbox.
       </p>},
   :image_url => '/images/ruby.jpg',
-  :price => 49.50)
+  :price => 49.50,
+  :cate =>'IT')
 # . . .
 
 Product.create(:title => 'Rails Test Prescriptions',
@@ -36,7 +38,8 @@ Product.create(:title => 'Rails Test Prescriptions',
         including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
       </p>},
   :image_url => '/images/rtp.jpg',
-  :price => 43.75)
+  :price => 43.75,
+  :cate =>'IT')
 #...
 
 Product.create(:title => 'The Curious Case of Benjamin Button',
@@ -46,7 +49,8 @@ Product.create(:title => 'The Curious Case of Benjamin Button',
         blablabla...
       </p>},
   :image_url => '/images/benjamin.jpg',
-  :price => 23.75)
+  :price => 23.75,
+  :cate =>'novel')
 # . . .
 
 Product.create(:title => 'Debug It!',
@@ -56,7 +60,8 @@ Product.create(:title => 'Debug It!',
         blablabla...
       </p>},
   :image_url => '/images/debug.jpg',
-  :price => 19.99)  
+  :price => 19.99,
+  :cate =>'IT')  
 # . . .
 
 Product.create(:title => 'Lowboy',
@@ -66,7 +71,8 @@ Product.create(:title => 'Lowboy',
         blablabla...
       </p>},
   :image_url => '/images/lowboy.jpg',
-  :price => 22.99)
+  :price => 22.99,
+  :cate =>'novel')
 # . . .
 
 Product.create(:title => 'Waterfront',
@@ -76,9 +82,10 @@ Product.create(:title => 'Waterfront',
         blablabla...
       </p>},
   :image_url => '/images/waterfront.jpg',
-  :price => 11.99)
+  :price => 11.99,
+  :cate =>'novel')
 # ...
-
+User.delete_all
 User.create(:name => 'sherry',
   :password => '123', :password_confirmation => '123')
 # ...
@@ -86,3 +93,37 @@ User.create(:name => 'sherry',
 User.create(:name => '113',
   :password => '113', :password_confirmation => '113')
 # ...
+
+Category.delete_all
+Category.create(:name => 'Literature')
+Category.create(:name => 'Management')
+Category.create(:name => 'Children')
+Category.create(:name => 'Life')
+Category.create(:name => 'Education')
+
+Subcategory.delete_all
+Subcategory.create(:name => 'novel', :parent => 'Literature')
+Subcategory.create(:name => 'romance', :parent => 'Literature')
+Subcategory.create(:name => 'poem', :parent => 'Literature')
+
+Subcategory.create(:name => 'economics and financials', :parent => 'Management')
+Subcategory.create(:name => 'finance and investment', :parent => 'Management')
+
+Subcategory.create(:name => 'comics', :parent => 'Children')
+Subcategory.create(:name => 'family education', :parent => 'Children')
+Subcategory.create(:name => 'age 0~2', :parent => 'Children')
+Subcategory.create(:name => 'age 3~6', :parent => 'Children')
+Subcategory.create(:name => 'age 7~10', :parent => 'Children')
+Subcategory.create(:name => 'age 11~14', :parent => 'Children')
+
+
+Subcategory.create(:name => 'health', :parent => 'Life')
+Subcategory.create(:name => 'marriage', :parent => 'Life')
+Subcategory.create(:name => 'fashion', :parent => 'Life')
+Subcategory.create(:name => 'entertainment', :parent => 'Life')
+Subcategory.create(:name => 'travel', :parent => 'Life')
+Subcategory.create(:name => 'pregnancy', :parent => 'Life')
+Subcategory.create(:name => 'sports', :parent => 'Life')
+Subcategory.create(:name => 'family-encyclopediapedia', :parent => 'Life')
+
+Subcategory.create(:name => 'IT', :parent => 'Education')

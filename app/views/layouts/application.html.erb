@@ -32,7 +32,7 @@
       <div id="columns">
         <div id="side"> 
        
-           <div id ="cart">    	
+          <div id ="cart">    	
         	<% if @cart%>
         	    <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do%> <!--若购物车为空则不显示-->
       			   <%= render @cart%>
@@ -44,6 +44,7 @@
           <%= link_to t('.news'), {:controller => "news", :action => "index" } %> <br>
           <%= link_to t('.contact'), {:controller => "contacts", :action => "index" } %> <br>
           <%= link_to 'Cart', {:controller => "carts", :action => "index" } %><br />
+          <%= link_to 'Category', {:controller => "categories", :action => "index" } %><br />
           <%= link_to 'Help', {:controller => "help", :action => "index" } %><br />
           <%= link_to 'Login', {:controller => "sessions", :action => "new" } %><br />
 

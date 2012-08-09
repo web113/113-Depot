@@ -56,5 +56,8 @@ en:
            
   searches:
     index:
-      add_html:        "Add to Cart"
-      
+      add_html:     "Add to Cart"
+  
+  subcategories:
+    index:
+      add_html:     "Add to Cart"    

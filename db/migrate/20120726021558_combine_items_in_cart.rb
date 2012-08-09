@@ -15,7 +15,6 @@ class CombineItemsInCart < ActiveRecord::Migration
       end
     end
   end
-
   def self.down
     #把数量大于等于1的商品划分成多个条目
     LineItem.where("quantity>1").each do |lineitem|

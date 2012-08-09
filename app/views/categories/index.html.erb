@@ -1,24 +1,24 @@
 <h1>Listing categories</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Parentid</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id = "view">
+  
+  <% @categories.each do |category| %>
+  <div id = "cate">
+     <p><%= category.name %></p>
+  </div>
+  <div id = "sub">
+   <% @subcategories.each do |subcategory|%>
+       <% if subcategory.parent == category.name%>
+            <!--<p><%= subcategory.name %><p>-->
+            <%= link_to ((subcategory.name), {:controller => "subcategories", :action => "index", :subcate => subcategory.name} )%><br />
 
-<% @categories.each do |category| %>
-  <tr>
-    <td><%= category.name %></td>
-    <td><%= category.parentid %></td>
-    <td><%= link_to 'Show', category %></td>
-    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+            
+
+       <% end %>
+  <% end %>
+  </div>
+   <% end %>
+</div>
 
 <br />
 

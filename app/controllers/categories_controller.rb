@@ -3,6 +3,7 @@ class CategoriesController < ApplicationController
   # GET /categories.xml
   def index
     @categories = Category.all
+    @subcategories = Subcategory.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -71,13 +72,13 @@ class CategoriesController < ApplicationController
 
   # DELETE /categories/1
   # DELETE /categories/1.xml
-  def destroy
-    @category = Category.find(params[:id])
-    @category.destroy
+  #def destroy
+  #  @category = Category.find(params[:id])
+  #  @category.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(categories_url) }
-      format.xml  { head :ok }
-    end
-  end
+  #  respond_to do |format|
+  #    format.html { redirect_to(categories_url) }
+  #    format.xml  { head :ok }
+  #  end
+  #end
 end
