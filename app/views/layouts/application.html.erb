@@ -6,10 +6,40 @@
         <%= stylesheet_link_tag "depot", :media => "all" %>
         <%= javascript_include_tag :defaults %>
         <%= javascript_include_tag "jquery-1.7.2.min.js" %>
+        <!--<%= javascript_include_tag "jquery.min.js" %>-->
         <%= javascript_include_tag "jquery-ui-1.8.22.custom.min.js" %>
         <%= javascript_include_tag "depot" %>
         <%= csrf_meta_tag %>
+
+    
+    <script language="javascript">
+    $(document).ready(function() {
+
+      /*  2nd example */
+      
+      $("#menu2 li a").wrapInner( '<span class="out"></span>' );
+      
+      $("#menu2 li a").each(function() {
+        $( '<span class="over">' +  $(this).text() + '</span>' ).appendTo( this );
+      });
+
+      $("#menu2 li a").hover(function() {
+        $(".out", this).stop().animate({'top':  '45px'},  200); // move down - hide
+        $(".over",  this).stop().animate({'top':  '0px'},   200); // move down - show
+
+      }, function() {
+        $(".out", this).stop().animate({'top':  '0px'},   200); // move up - show
+        $(".over",  this).stop().animate({'top':  '-45px'}, 200); // move up - hide
+      });
+          
+    });
+
+  </script>
 	</head>
+
+
+
+
     <body id="store">
       <div id="banner">
       	
@@ -42,28 +72,32 @@
       		    <%end%>
       		<%end%>
 		   </div>
-          <%= link_to t('.home'), {:controller => "store", :action => "index" } %> <br>
-          <%= link_to t('.questions'), {:controller => "questions", :action => "index" } %> <br>
-          <%= link_to t('.news'), {:controller => "news", :action => "index" } %> <br>
-          <%= link_to t('.contact'), {:controller => "contacts", :action => "index" } %> <br>
-          <%= link_to 'Cart', {:controller => "carts", :action => "index" } %><br />
-          <%= link_to 'Category', {:controller => "categories", :action => "index" } %><br />
-          <%= link_to 'Help', {:controller => "help", :action => "index" } %><br />
+          
           <%= link_to 'Login', {:controller => "sessions", :action => "new" } %><br />
 
           <% if session[:user_id] %>
             <br />
             <%= link_to 'Orders', orders_path %><br />
             <%= link_to 'Products', products_path %><br />
-            <%= link_to 'Users', users_path %><br />
-           
-            
-            
+            <%= link_to 'Users', users_path %><br />           
             <br />
             <%= button_to 'Logout', logout_path, :method => :delete %>
           <% end %>
 
         </div>
+        
+        <div id="menu2" class="menu">
+      <ul>
+        <li><%= link_to t('.home'), {:controller => "store", :action => "index" } %></li>
+        <li><%= link_to 'Category', {:controller => "categories", :action => "index" } %></li>
+        <li><%= link_to 'Cart', {:controller => "carts", :action => "index" } %></li>
+        <li><%= link_to 'Help', {:controller => "help", :action => "index" } %></li>
+        <li><%= link_to t('.news'), {:controller => "news", :action => "index" } %></li>
+      </ul>
+    </div>
+
+
+
         <div id="main">
         	
           <%= yield %>

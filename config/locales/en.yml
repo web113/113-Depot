@@ -61,3 +61,7 @@ en:
   subcategories:
     index:
       add_html:     "Add to Cart"    
+
+  products:  
+    show:
+      add_html:     "Add to Cart"  

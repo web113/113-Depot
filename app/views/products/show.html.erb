@@ -1,24 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class = "entry">
+    <%= image_tag(@product.image_url)%>
+    
+    <h3> <%= @product.title %></h3>
+    
+    <%= sanitize @product.description %>
+    <span class = "price"><%= number_to_currency(@product.price) %></span>
+      <%= button_to t('.add_html'), line_items_path(:product_id => @product),
+         :remote => true %>
 
-<p>
-  <b>Title:</b>
-  <%= @product.title %>
-</p>
+    <div class = "price_line">      
+    </div>
+</div>
 
-<p>
-  <b>Description:</b>
-  <%= @product.description %>
-</p>
-
-<p>
-  <b>Image url:</b>
-  <%= @product.image_url %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%= @product.price %>
-</p>
+<%= params.inspect %>
 
 
 <%= link_to 'Edit', edit_product_path(@product) %> |

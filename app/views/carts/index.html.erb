@@ -21,7 +21,7 @@
 
 <% for item in @cart.line_items %>
 <tr class="<%= cycle('alt_even', 'alt_odd') %>" >
-<td height = "100"><%= image_tag(item.product.image_url) %></td>
+<td height = "100", weight = "80"><%= link_to (image_tag(item.product.image_url)),{:controller => "products", :action => "show",:id => item.product.id } %></td>
 <td ><h3><%= item.product.title %></h3></td>
 <td><%= number_to_currency(item.product.price) %></td>
 <td><%= item.quantity %></td>

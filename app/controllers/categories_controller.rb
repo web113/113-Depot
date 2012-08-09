@@ -4,6 +4,7 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
     @subcategories = Subcategory.all
+    @cart = current_cart
 
     respond_to do |format|
       format.html # index.html.erb
