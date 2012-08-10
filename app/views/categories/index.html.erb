@@ -1,19 +1,16 @@
-<h1>Listing categories</h1>
+<h1 style = "font:  bold 16pt/18pt Times, serif">My Categories!</h1>
 
-<div id = "view">
+<div id = "view", style = " width: 200px;line-height:28px;smaller sans-serif;">
   
   <% @categories.each do |category| %>
-  <div id = "cate">
+  <div id = "cate", style = "color: #fdfae3; background-color:#118d40;">
      <p><%= category.name %></p>
   </div>
-  <div id = "sub">
+  <div id = "sub",style = "line-height:18px;float:left:width:200px;">
    <% @subcategories.each do |subcategory|%>
        <% if subcategory.parent == category.name%>
             <!--<p><%= subcategory.name %><p>-->
-            <%= link_to ((subcategory.name), {:controller => "subcategories", :action => "index", :subcate => subcategory.name} )%><br />
-
-            
-
+            <%= link_to ((subcategory.name), {:controller => "subcategories", :action => "index", :subcate => subcategory.name} )%><br />    
        <% end %>
   <% end %>
   </div>
@@ -21,5 +18,3 @@
 </div>
 
 <br />
-
-<%= link_to 'New Category', new_category_path %>

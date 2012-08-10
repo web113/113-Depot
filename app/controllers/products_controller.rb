@@ -14,6 +14,12 @@ class ProductsController < ApplicationController
   # GET /products/1.xml
   def show
     @product = Product.find(params[:id])
+    @cart = current_cart
+
+    @comments = Comment.where(:product_id => @product.id)
+    @comment = Comment.new
+
+    @name= User.find_by_id(session[:user_id]).name
 
     respond_to do |format|
       format.html # show.html.erb

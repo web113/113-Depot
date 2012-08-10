@@ -29,7 +29,8 @@ class SubcategoriesController < ApplicationController
   # GET /subcategories/new.xml
   def new
     @subcategory = Subcategory.new
-
+    @subcate_one =params[:subcate_one]
+    @result = Product.subcate(params[:subcate_one])
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @subcategory }
