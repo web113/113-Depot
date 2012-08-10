@@ -1,5 +1,6 @@
 class Cart < ActiveRecord::Base
   has_many :line_items, :dependent => :destroy
+  belongs_to :user
  
   #高级的add_product方法，检查购物车商品列表中是否已经含有该商品，如果有则增加其数量，如果没有则添加进去 
   def add_product(product_id)

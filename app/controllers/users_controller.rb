@@ -40,7 +40,10 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.xml
   def create
-    @user = User.new(params[:user])
+    cart = Cart.new
+    data = params[:user]
+    data[:cart_id] = cart.id
+    @user = User.new(data)
 
     respond_to do |format|
       if @user.save

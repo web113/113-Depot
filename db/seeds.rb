@@ -86,13 +86,19 @@ Product.create(:title => 'Waterfront',
   :cate =>'novel')
 # ...
 User.delete_all
-User.create(:name => 'sherry',
-  :password => '123', :password_confirmation => '123')
-# ...
+Cart.delete_all
 
-User.create(:name => '113',
-  :password => '113', :password_confirmation => '113')
-# ...
+sherry = User.create(:name => 'sherry',
+  :password => '123', :password_confirmation => '123')
+Cart.create(:user_id => sherry.id)
+
+admin = User.create(:name => 'admin',
+  :password => 'admin', :password_confirmation => 'admin')
+Cart.create(:user_id => admin.id)
+
+ad = User.create(:name => 'ad',
+  :password => 'ad', :password_confirmation => 'ad')
+Cart.create(:user_id => ad.id)
 
 Category.delete_all
 Category.create(:name => 'Literature')

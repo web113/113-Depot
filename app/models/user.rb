@@ -1,6 +1,8 @@
 require 'digest/sha2'
 
 class User < ActiveRecord::Base
+  has_many :orders, :dependent => :destroy
+  has_one :cart, :dependent => :destroy
   validates :name, :presence => true, :uniqueness => true
 
   validates :password, :confirmation => true

@@ -4,8 +4,14 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.xml
   def index
-    @orders = Order.paginate :page => params[:page], :order => 'created_at desc',
-      :per_page => 10
+    if User.find_by_id(session[:user_id]).name != "admin"
+      @orders = User.find_by_id(session[:user_id]).orders
+      @orders = @orders.paginate :page => params[:page], :order => 'created_at desc',
+        :per_page => 10
+    else
+      @orders = Order.paginate :page => params[:page], :order => 'created_at desc',
+        :per_page => 10
+    end
     #@orders = Order.all
     #@cart = current_cart
 
@@ -50,14 +56,18 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.xml
   def create
-    @order = Order.new(params[:order])
+    data = params[:order]
+    data[:user_id] = session[:user_id]
+    @order = Order.new(data)
     @order.add_line_items_from_cart(current_cart)
 
     respond_to do |format|
       if @order.save
-        Cart.destroy(session[:cart_id])
-        session[:cart_id] = nil
-        Notifier.order_received(@order).deliver
+        user = User.find_by_id(session[:user_id])
+        for line_item in user.cart.line_items do
+          LineItem.destroy(line_item)
+        end
+        #Notifier.order_received(@order).deliver
         format.html { redirect_to(store_url, :notice => I18n.t('.thanks')) }
         format.xml  { render :xml => @order, :status => :created, :location => @order }
       else
