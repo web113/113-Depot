@@ -1,5 +1,6 @@
 var jq = $.noConflict();
 var quantity = 0;
+var that = null;
 
 jq(document).ready(function() {
   dragAndDrop();
@@ -7,30 +8,38 @@ jq(document).ready(function() {
   jq("td input").live("blur", afterModify);
 });
 
-var dragAndDrop = function() {
-  var that = null;
-  
-  jq("#current_item").draggable({
+var setElementHoverEffect = function(element) {
+  element.css("z-index", "10");
+  element.mouseover(function() {
+    jq(this).css("background-color", "#1F7A1F"); 
+  });
+
+  element.mouseout(function() {
+    jq(this).css("background-color", "#114411");
+  });
+};
+
+var setHoverEffect = function() {
+  setElementHoverEffect(jq("#current_item"));
+  setElementHoverEffect(jq(".line_item"));
+};
+
+var makeDraggable = function(element) {
+  jq(element).draggable({
     start: function(event, ui) {
       that = jq(this);
+      jq(this).css("z-index", "20");
     }, 
     stop: function(event, ui) {
       that = null;
+      jq(this).css("z-index", "10");
     }, 
     revert: "invalid"
   });
+};
 
-  jq(".line_item").draggable({
-    start: function(event, ui) {
-      that = jq(this);
-    }, 
-    stop: function(event, ui) {
-      that = null;
-    }, 
-    revert: "invalid"
-  });
-
-  jq("#main").droppable({
+var makeDroppable = function(element) {
+  jq(element).droppable({
     over: function(event, ui) {
       if (that) {
         that.find("[value=del]").click();
@@ -38,6 +47,13 @@ var dragAndDrop = function() {
       }
     }
   });
+};
+
+var dragAndDrop = function() {
+  makeDraggable("#current_item");
+  makeDraggable(".line_item");
+  makeDroppable("#main");
+  setHoverEffect();
 };
 
 var modify = function() {
@@ -80,6 +96,9 @@ var updateForm = function(element, number) {
 
 var showEffect = function(flag) {
   if (flag == "false") {
-    new Effect.Shake($$("#current_item")[0]);
+    new Effect.Highlight($$("#current_item")[0], {
+      startcolor: "#88ff88", endcolor: "#114411"
+    });
+    setHoverEffect();
   }
 };
