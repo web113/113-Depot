@@ -40,13 +40,11 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.xml
   def create
-    cart = Cart.new
-    data = params[:user]
-    data[:cart_id] = cart.id
-    @user = User.new(data)
+    @user = User.new(params[:user])
 
     respond_to do |format|
       if @user.save
+	Cart.create(:user_id => @user.id)
         format.html { redirect_to(users_url, :notice => "User #{@user.name} was successfully created.") }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
