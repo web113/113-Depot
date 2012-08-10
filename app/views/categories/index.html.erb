@@ -10,10 +10,7 @@
    <% @subcategories.each do |subcategory|%>
        <% if subcategory.parent == category.name%>
             <!--<p><%= subcategory.name %><p>-->
-            <%= link_to ((subcategory.name), {:controller => "subcategories", :action => "index", :subcate => subcategory.name} )%><br />
-
-            
-
+            <%= link_to ((subcategory.name), {:controller => "subcategories", :action => "index", :subcate => subcategory.name} )%><br />    
        <% end %>
   <% end %>
   </div>

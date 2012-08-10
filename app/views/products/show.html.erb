@@ -12,8 +12,71 @@
     </div>
 </div>
 
-<%= params.inspect %>
+<div class = "comment">
+Comments:
+</div>
+<% @comments.each do |comment|%>
+<table class="product_detail">
+<tr>
+    <th width = "50" height = "2"></th>
+    <th width = "900" height = "2"></th>
+</tr>
+<tr class="alt_odd">
+    <th>Title:</th>
+    <th><%= comment.title %> </th>
+</tr>
+<tr class="alt_odd">
+    <th>Context:</th>
+    <th><%= comment.context %> </th>
+</tr>
+<tr class="alt_odd">
+    <th>Time:</th>
+    <th><%= comment.create_at %> </th>
+</tr>    
+<tr class="alt_odd">
+    <th>Commenter:</th>
+    <th><%= comment.userid %> </th>
+
+</tr> 
+</table>
 
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+
+
+<br/>
+<% end %>
+
+
+<div class = "comment">
+Send Comments Of My Own~!:)
+</div>
+
+<%= form_for @comment do |f| %>
+<div class="field">
+    <%= f.label "Title" %><br />
+    <%= f.text_field :title, :size => 40%>
+  </div>
+  <div class="field">
+    <%= f.label "Context" %><br />
+    <%= f.text_area  :context,:rows => 3, :cols => 40 %>
+  </div>
+  <div class="actions">
+    <input type="hidden" name= "comment[create_at]" id="comment_create_at" value=<%= Time.now %>/>
+  </div>
+  <div class="actions">
+    <input type="hidden" name= "comment[userid]" id="comment_userid" value=<%= @name %> >
+  </div>
+  <div class="actions">
+    <input type="hidden" name= "comment[product_id]" id="comment_product_id" value=<%= " #{ @product.id}" %>/>
+    <%=submit_tag "Update" %>
+  </div>
+<%end%>
+
+
+
+
+
+
+<!--<%= params.inspect %>-->
+
+

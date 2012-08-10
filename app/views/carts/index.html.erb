@@ -11,7 +11,7 @@
 
 <tr class="alt_odd">
 <td height = "5" width = "120"></td>
-<td width = "180"></td>
+<td width = "150"></td>
 <td ></td>
 <td ></td>
 <td ></td>
@@ -27,7 +27,7 @@
 <td><%= item.quantity %></td>
 <td><%= number_to_currency(item.product.price*item.quantity) %></td>
 <td><%= button_to 'delete', item, :method => :delete, :confirm => 'Are you sure?' %></td>
-<td><%= button_to '+'%></td>
+
 </tr>
 <%end%>
 
