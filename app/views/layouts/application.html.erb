@@ -26,54 +26,55 @@
           <%= javascript_tag "$$('.locale input').each(Element.hide)"%>
         <% end %>	
       </div>
-      <div id="searching" style="float: right;  padding-top: 0.3em;">
-        <!--search-->
-        <%= form_tag searches_path, :class => 'serach', :method => 'get' do%>
-          <%= text_field_tag "q", params[:q]%>
-          <%= submit_tag "Search"%>
-        <% end %>
-      </div>
-      <div id="columns">
-        <div id="side"> 
 
-          <div id ="cart">    	
-            <% if @cart%>
-              <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do%> <!--若购物车为空则不显示-->
+      <div id="columns">
+        <% if session[:user_id] %>
+          <div id="side"> 
+
+            <div id ="cart">    	
+              <% if @cart %>
                 <%= render @cart%>
               <%end%>
-            <%end%>
+            </div>
+
+            <% if session[:user_id] %>
+              <div id="logout">
+                <%= button_to 'Logout', logout_path, :method => :delete %>
+              </div>
+            <% end %>
+
+          </div>
+        <% end %>
+
+
+        <% if session[:user_id] %>
+          <div id="main" style="margin-left: 17em;">
+        <% else %>
+          <div id="main">
+        <% end %>
+          <div class="lavalamp green" >
+            <ul>
+              <li><%= link_to t('.home'), {:controller => "store", :action => "index" } %></li>
+              <li><%= link_to 'Category', {:controller => "categories", :action => "index" } %></li>
+              <% if session[:user_id] %>
+                <li><%= link_to 'Orders', orders_path %></li>
+                <% if User.find_by_id(session[:user_id]).name == "admin" %>
+                  <li><%= link_to 'Products', products_path %></li>
+                  <li><%= link_to 'Users', users_path %></li>           
+                <% end %>
+              <% end %>
+              <li><%= link_to 'Help', {:controller => "help", :action => "index" } %></li>
+              <li><%= link_to t('.news'), {:controller => "news", :action => "index" } %></li>
+              <% unless session[:user_id] %>
+                <li><%= link_to 'Login', {:controller => "sessions", :action => "new" } %><li>
+              <% else %>
+                <li><a href="javascript:" onclick="jq(logout).children().find('[value=Logout]').click();">Logout</a></li>
+              <% end %>
+            </ul>
           </div>
 
-          <%= link_to 'Login', {:controller => "sessions", :action => "new" } %><br />
-
-          <% if session[:user_id] %>
-            <br />
-            <%= link_to 'Orders', orders_path %><br />
-            <% if User.find_by_id(session[:user_id]).name == "admin" %>
-              <%= link_to 'Products', products_path %><br />
-              <%= link_to 'Users', users_path %><br />           
-            <% end %>
-            <br />
-            <%= button_to 'Logout', logout_path, :method => :delete %>
-          <% end %>
-
-        </div>
-
-        <div id="menu2" class="menu">
-          <ul>
-            <li><%= link_to t('.home'), {:controller => "store", :action => "index" } %></li>
-            <li><%= link_to 'Category', {:controller => "categories", :action => "index" } %></li>
-            <li><%= link_to 'Cart', {:controller => "carts", :action => "index" } %></li>
-            <li><%= link_to 'Help', {:controller => "help", :action => "index" } %></li>
-            <li><%= link_to t('.news'), {:controller => "news", :action => "index" } %></li>
-          </ul>
-        </div>
-
-
-
-        <div id="main">
-
           <%= yield %>
+
         </div>
       </div>
     </body>

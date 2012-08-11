@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
         :per_page => 10
     end
     #@orders = Order.all
-    #@cart = current_cart
+    @cart = current_cart
 
     respond_to do |format|
       format.html # index.html.erb

@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   # GET /products.xml
   def index
     @products = Product.all
+    @cart = current_cart
 
     respond_to do |format|
       format.html # index.html.erb

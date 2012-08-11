@@ -102,3 +102,4 @@ var showEffect = function(flag) {
     setHoverEffect();
   }
 };
+

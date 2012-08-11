@@ -1,22 +1,30 @@
-<% if cart.line_items.empty? %>
-<% else %>
-
 <div class="cart_title"><%= t('.title')%></div>
 
 <table>
 	<%= render(cart.line_items)%>
-
     
-    <tr class="total_line">
-    	<td class="total" colspan = "2">Total</td>
-    	<td class = "total_cell"><%= number_to_currency(cart.total_price)%></td>   	
-    </tr>
+    <% unless cart.line_items.empty? %>
+      <tr class="total_line">
+          <td class="total" colspan = "2">Total</td>
+          <td class = "total_cell"><%= number_to_currency(cart.total_price)%></td>   	
+      </tr>
+    <% else %>
+      <tr class="empty_cart">
+        <td>Your cart is empty!</td>
+      </tr>
+    <% end %>
 </table>
 
-<!--创建一个checkout按钮来创建一个新的order-->
-<%= button_to t('.checkout'), new_order_url, :method => :get%>
-<!--添加清空购物车的按钮-->
-<%= button_to t('.empty'), cart, :method => :delete,
-    :confirm => 'Are you sure?' %>
 
-<% end %>
+<div class="choice">
+  <div id="checkout">
+    <!--创建一个checkout按钮来创建一个新的order-->
+    <%= button_to t('.checkout'), new_order_url, :method => :get%>
+  </div>
+  <div id="empty">
+    <!--添加清空购物车的按钮-->
+    <%= button_to t('.empty'), cart, :method => :delete,
+      :confirm => 'Are you sure?' %>
+    </div>
+</div>
+

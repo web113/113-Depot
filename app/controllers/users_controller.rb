@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   # GET /users.xml
   def index
     @users = User.order(:name)
+    @cart = current_cart
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  skip_before_filter :authorize
+
   # GET /categories
   # GET /categories.xml
   def index

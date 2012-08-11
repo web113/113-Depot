@@ -11,8 +11,10 @@ Subcate:<%= @subcate%>
     
     <%= sanitize product.description %>
     <span class = "price"><%= number_to_currency(product.price) %></span>
-  <%= button_to t('.add_html'), line_items_path(:product_id => product, :modify => "false"),
-         :remote => true %>
+    <% if session[:user_id] %>
+      <%= button_to t('.add_html'), line_items_path(:product_id => product, :modify => "false"),
+        :remote => true %>
+    <% end %>
 
     <div class = "price_line">      
     </div>
