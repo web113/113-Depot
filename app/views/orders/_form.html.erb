@@ -28,6 +28,8 @@
     <%= f.select :pay_type, Order::PAYMENT_TYPES, :prompt => t('.pay_promt') %>
   </div>
   
+  <div class="button">
     <%= f.submit t('.submit') %>
+  </div>
   
 <% end %>

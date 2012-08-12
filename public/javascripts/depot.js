@@ -6,6 +6,7 @@ jq(document).ready(function() {
   dragAndDrop();
   jq(".item_quantity").live("click", modify);
   jq("td input").live("blur", afterModify);
+  jq(".need_to_login").click(login);
 });
 
 var setElementHoverEffect = function(element) {
@@ -103,3 +104,7 @@ var showEffect = function(flag) {
   }
 };
 
+var login = function() {
+  var url = "http://" + location.host + jq("#login").children().eq(0).attr("href");
+  location.href = url;
+};

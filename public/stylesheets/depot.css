@@ -7,6 +7,7 @@
   margin-bottom: 2em;
   background-color: #f0f0f0;
   font: bold smaller Arial;
+  text-align: center;
 }
 
 
@@ -249,40 +250,6 @@
     color: #000000;
 }
 
-
-/*Styles for order form*/
-.depot_form fieldset{
-  margin-top: 20px;
-}
-
-.depot_form legend{
-  color: #dfd;
-  background: #141;
-  font-family: Arial;
-  padding: 0.2em 1em;
-}
-
-.depot_form label {
-  width: 5em;
-  float: left;
-  text-align: right;
-  padding-top: 0.2em;
-  margin-right: 0.1em;
-  display: block;
-}
-
-.depot_form select, .depot_form textarea, .depot_form input{
-  margin-left: 0.5 em;
-}
-
-.depot_form .submit{
-  margin-left: 4em;
-}
-
-.depot_form div{
-  margin: 0.5em 0;
-}
-
 /*international*/
 .locale {
   float: right;
@@ -328,7 +295,7 @@
   width: 144px;
 }
 
-.button_to input {
+.button_to input, .button input, .need_to_login {
   display: inline-block;
   zoom: 1;
   display: inline;
@@ -360,7 +327,7 @@
   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#7db72f', endColorstr='#4e7d0e');
 }
 
-.button_to input:hover {
+.button_to input:hover, .button input:hover, .need_to_login:hover {
   text-decoration: none;
 
   /* color */
@@ -370,7 +337,7 @@
   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#6b9d28', endColorstr='#436b0c');
 }
 
-.button_to input:active {
+.button_to input:active, .button input:active, .need_to_login:active {
   position: relative;
   top: 1px;
 
@@ -408,6 +375,7 @@
   background: #fff;
   -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
   -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+  box-shadow: 0 3px 6px rgba(0,0,0,.25);
   background : -webkit-gradient(linear, left top, left bottom, from(rgb(240,240,240)), to(rgb(204,204,204)));
   background : -moz-linear-gradient(top, rgb(240,240,240), rgb(204,204,204));
   overflow: hidden;
@@ -463,3 +431,4 @@ ul li a:hover {
 #logout {
   display: none;
 }
+

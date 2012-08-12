@@ -60,6 +60,7 @@ class OrdersController < ApplicationController
     data[:user_id] = session[:user_id]
     @order = Order.new(data)
     @order.add_line_items_from_cart(current_cart)
+    @cart = current_cart
 
     respond_to do |format|
       if @order.save

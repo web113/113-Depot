@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  skip_before_filter :authorize
+
   # GET /products
   # GET /products.xml
   def index
@@ -20,7 +22,11 @@ class ProductsController < ApplicationController
     @comments = Comment.where(:product_id => @product.id)
     @comment = Comment.new
 
-    @name= User.find_by_id(session[:user_id]).name
+    if session[:user_id]
+      @name= User.find_by_id(session[:user_id]).name
+    else
+      @name=nil
+    end
 
     respond_to do |format|
       format.html # show.html.erb
