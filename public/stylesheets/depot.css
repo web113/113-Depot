@@ -184,6 +184,7 @@
   margin-bottom: 10px;
   margin-top: 10px;
 }
+
 /*cart display*/
 .cart_detail{
   font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -220,6 +221,56 @@
 }
 
 .cart_detail img {
+  width: 60px;
+  height: 80px;
+  margin: 10px 10px 10px 20px;
+  float: left;
+}
+
+/*order display*/
+.order_detail{
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  width:700px;
+  border-collapse:collapse;
+}
+
+.order_detail td, #order .order_detail th{
+  font-size:1em;
+  /*border:1px solid #98bf21;*/
+  padding:3px 7px 2px 7px; 
+}
+
+.order_detail th 
+{
+  font-size:1.1em;
+  text-align:center;
+  padding-top:5px;
+  padding-bottom:4px;
+  background-color: #EAF2D3;
+  color: #000000;
+}
+
+
+.order_detail tr.alt_even td 
+{
+  text-align:center;
+  background-color:#EAF2D3;
+  height: 80px;
+}
+
+.order_detail tr.alt_odd td 
+{
+  text-align:center;
+  background-color:#ffffff;
+}
+
+.order_detail tr.imfo td 
+{
+  text-align:center;
+  background-color:#f9fcb5;
+}
+
+.order_detail img {
   width: 60px;
   height: 80px;
   margin: 10px 10px 10px 20px;
