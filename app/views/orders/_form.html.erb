@@ -11,19 +11,20 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="form_item">
     <%= f.label :name, t('.name') + ":" %>
     <%= f.text_field :name,  :size => 40 %>
   </div>
-  <div>
+  <div class="form_item">
     <%= f.label :address, t('.address') + ":" %>
+    <br />
     <%= f.text_area :address, :rows => 3, :cols => 40 %>
   </div>
-  <div >
+  <div class="form_item">
     <%= f.label :email, t('.email') + ":" %>
     <%= f.email_field :email, :size => 40 %>
   </div>
-  <div >
+  <div class="form_item">
     <%= f.label :pay_type, t('.pay_type') + ":" %>
     <%= f.select :pay_type, Order::PAYMENT_TYPES, :prompt => t('.pay_promt') %>
   </div>

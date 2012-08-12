@@ -8,6 +8,10 @@
   background-color: #f0f0f0;
   font: bold smaller Arial;
   text-align: center;
+
+  -moz-opacity: 0.6;
+  -webkit-opacity: 0.6;
+  opacity: 0.6;
 }
 
 
@@ -483,3 +487,118 @@ ul li a:hover {
   display: none;
 }
 
+.form_content {
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  min-height: 180px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.5);
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.form_content .form_item {
+  width: 300px;
+  margin: auto;
+}
+
+.form_content .form_item label {
+  display: inline-block;
+  width: 65px;
+
+  -moz-opacity: 0.8;
+  -webkit-opacity: 0.8;
+  opacity: 0.8;
+}
+
+.form_content .form_item input {
+  display: inline-block;
+  width: 200px;
+
+  margin: 10px;
+  -moz-opacity: 0.5;
+  -webkit-opacity: 0.5;
+  opacity: 0.5;
+
+  border: 1px #ddd solid;
+  padding: 2px;
+
+  -webkit-box-shadow: 0px 0px 4px #aaa;
+  -moz-box-shadow: 0px 0px 4px #aaa; 
+  box-shadow: 0px 0px 4px #aaa;
+
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.form_content .form_item textarea {
+  resize: none;
+  display: inline-block;
+  width: 270px;
+
+  margin: 10px;
+  -moz-opacity: 0.5;
+  -webkit-opacity: 0.5;
+  opacity: 0.5;
+
+  border: 1px #ddd solid;
+  padding: 2px;
+
+  -webkit-box-shadow: 0px 0px 4px #aaa;
+  -moz-box-shadow: 0px 0px 4px #aaa; 
+  box-shadow: 0px 0px 4px #aaa;
+
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.form_content .form_item select {
+  margin: 10px;
+}
+
+.form_content .form_item input:focus,
+.form_content .form_item textarea:focus {
+  box-shadow: 0px 0px 10px #538018;
+}
+
+.button {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.form_title {
+  font-family: Georgia;
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.40);
+  text-decoration: none;
+  text-align: center;
+
+  width: 200px;
+  position: relative;
+  top: -25px;
+  left: -30px;
+
+  color: #e8f0de;
+  border: solid 1px #538312;
+  background: #64991e;
+
+  z-index: 100;
+  -moz-transform:translate(-40px,45px) rotate(-45deg);
+  -webkit-transform:translate(-40px,45px) rotate(-45deg);
+  -o-transform:translate(-40px,45px) rotate(-45deg);
+  transform:translate(-40px,45px) rotate(-45deg);
+  -moz-box-shadow:0 0 5px rgba(0,0,0,.5),inset 0 0 2px #fff;
+  -webkit-box-shadow:0 0 5px rgba(0,0,0,.5),inset 0 0 2px #fff;
+  box-shadow:0 0 5px rgba(0,0,0,.5),inset 0 0 2px #fff;
+}
+
+.form_content .loginBox input {
+  width: 180px;
+}

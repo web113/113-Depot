@@ -29,7 +29,7 @@ div.field, div.actions {
 }
 
 .field_with_errors {
-  padding: 2px;
+  padding: 1px;
   background-color: red;
   display: table;
 }
@@ -39,7 +39,7 @@ div.field, div.actions {
   border: 2px solid red;
   padding: 7px;
   padding-bottom: 0;
-  margin-bottom: 20px;
+  margin: 40px auto 20px auto;
   background-color: #f0f0f0;
 }
 

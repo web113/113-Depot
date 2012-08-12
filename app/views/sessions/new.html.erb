@@ -4,23 +4,24 @@
   <% end %>
 
   <%= form_tag do %>
-    <fieldset>
+    <div class="form_content">
     	<!-- <legend>Please Log In</legend> -->
+        <div class="form_title">Login</div>
 
-        <div class="form_item">
-        	<label for="name">Name:</label>
-            <%= text_field_tag :name, params[:name] %>
+        <div class="form_item loginBox">
+          <label for="name">Name</label><span>:</span>
+          <%= text_field_tag :name, params[:name] %>
         </div>
 
-        <div class="form_item">
-        	<label for="password">Password:</label>
-            <%= password_field_tag :password, params[:password] %>
+        <div class="form_item loginBox">
+          <label for="password">Password</label><span>:</span>
+          <%= password_field_tag :password, params[:password] %>
         </div>
 
         <div class="button">
           <%= submit_tag "Login" %>
         </div>
-    </fieldset>
+    </div>
   <% end %>
 
 </div>
