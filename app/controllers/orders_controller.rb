@@ -7,10 +7,19 @@ class OrdersController < ApplicationController
     if User.find_by_id(session[:user_id]).name != "admin"
       @orders = User.find_by_id(session[:user_id]).orders
       @orders = @orders.paginate :page => params[:page], :order => 'created_at desc',
-        :per_page => 10
+        :per_page => 3
+
+      #@line_items = LineItem.where(:order_id => @order.id)
+      @users = User.all
+      @lineitems = LineItem.all
+      @products = Product.all
+      
     else
       @orders = Order.paginate :page => params[:page], :order => 'created_at desc',
-        :per_page => 10
+        :per_page => 3
+      @lineitems = LineItem.all
+      @products = Product.all
+      @users = User.all
     end
     #@orders = Order.all
     @cart = current_cart
@@ -25,6 +34,8 @@ class OrdersController < ApplicationController
   # GET /orders/1.xml
   def show
     @order = Order.find(params[:id])
+    #@line_items = LineItem.where(:order_id => @order.id)
+    @line_items = LineItem.all
 
     respond_to do |format|
       format.html # show.html.erb
