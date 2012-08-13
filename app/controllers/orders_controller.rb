@@ -116,4 +116,14 @@ class OrdersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def ship
+    @order = Order.find(params[:id])
+    Notifier.order_shipped(@order).deliver
+
+    respond_to do |format|
+      format.html { redirect_to(orders_url) }
+      format.xml  { render :xml => @order }
+    end
+  end
 end

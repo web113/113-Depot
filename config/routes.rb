@@ -5,6 +5,8 @@ Depot::Application.routes.draw do
 
   resources :categories
 
+  get 'orders/ship'
+
   get 'admin' => 'admin#index'
 
   controller :sessions do
