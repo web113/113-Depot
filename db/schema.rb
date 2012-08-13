@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(:version => 20120813080228) do
     t.datetime "updated_at"
     t.integer  "category_id"
     t.string   "cate",        :default => "IT"
-    t.integer  "inventory"
+    t.integer  "inventory",   :default => 1000
   end
 
   create_table "subcategories", :force => true do |t|

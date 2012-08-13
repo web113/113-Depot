@@ -3,8 +3,14 @@
     
     <h3> <%= @product.title %></h3>
     
+    <%for cate in @allcates%>
+       <%if cate != nil%>
+          <%= cate%>
+       <%end%>
+    <%end%>
+    
     <%= sanitize @product.description %>
-    <%= @average%>
+    score:<%= @average%>
     <span class = "price"><%= number_to_currency(@product.price) %></span>
     <% if session[:user_id] %>
       <%= button_to t('.add_html'), line_items_path(:product_id => @product,:modify => "false"),

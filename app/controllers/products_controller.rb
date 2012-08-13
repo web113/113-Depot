@@ -22,6 +22,8 @@ class ProductsController < ApplicationController
     @comments = Comment.where(:product_id => @product.id)
     @comment = Comment.new
 
+    @allcates = @product.cate.split(";")    
+
     if session[:user_id]
       @name= User.find_by_id(session[:user_id]).name
     else
