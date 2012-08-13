@@ -7,11 +7,17 @@
 <% @product.each do |product| %>
   <div class="entry">
     <%= link_to (image_tag(product.image_url)),{:controller => "products", :action => "show",:id => product.id } %>
-    <h3 style ="float:left;width:330px;"><%= product.title %></h3>
-    <div class ="product_cate" style ="width:40px;border-style:solid;border-width:0.1em;float:left;background-color:#F0F0F0;text-align:center;">
-	<%= link_to (product.cate), {:controller => "subcategories", :action => "index",:subcate => product.cate } %><br/>
-	</div>
-	<br />
+
+    <h3><%= product.title %></h3>
+
+    <%allcates = product.cate.split(";") %>
+	  <%for cate in allcates%>
+       <%if cate != nil%>
+          <%= link_to (cate), {:controller => "subcategories", :action => "index",:subcate => cate } %>
+       <%end%>
+    <%end%>	
+	  <br />
+
     <%= sanitize product.description %>
    
       <span class="price"><%= number_to_currency(product.price) %></span>

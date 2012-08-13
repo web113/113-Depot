@@ -9,6 +9,14 @@ Subcate:<%= @subcate%>
     
     <h3> <%= product.title %></h3>
     
+    <%allcates = product.cate.split(";") %>
+    <%for cate in allcates%>
+       <%if cate != nil%>
+          <%= link_to (cate), {:controller => "subcategories", :action => "index",:subcate => cate } %>
+       <%end%>
+    <%end%>
+    <br/>
+
     <%= sanitize product.description %>
     <span class = "price"><%= number_to_currency(product.price) %></span>
     <% if session[:user_id] %>

@@ -5,7 +5,7 @@
     
     <%for cate in @allcates%>
        <%if cate != nil%>
-          <%= cate%>
+          <%= link_to (cate), {:controller => "subcategories", :action => "index",:subcate => cate } %>
        <%end%>
     <%end%>
     
