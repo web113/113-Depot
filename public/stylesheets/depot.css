@@ -119,6 +119,13 @@
   font-size: 17px;
 }
 
+#store .entry  .inventory {
+  color: #44a;
+  font-weight: bold;
+  margin-right: 2em;
+  font-size: 14px;
+}
+
 /* Styles for main page */
 #banner {
   background-color: #9c9;

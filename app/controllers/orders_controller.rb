@@ -72,14 +72,29 @@ class OrdersController < ApplicationController
     @order = Order.new(data)
     @order.add_line_items_from_cart(current_cart)
     @cart = current_cart
+    
 
     respond_to do |format|
       if @order.save
         user = User.find_by_id(session[:user_id])
-        for line_item in user.cart.line_items do
+        for line_item in user.cart.line_items
           LineItem.destroy(line_item)
         end
-        #Notifier.order_received(@order).deliver
+        Notifier.order_received(@order).deliver
+
+        @line_items = LineItem.all
+        @products = Product.all
+        for lineitem in @line_items 
+           if lineitem.order_id == @order.id
+              for product in @products
+                  if  product.id == lineitem.product_id
+                      product.inventory = product.inventory - lineitem.quantity                     
+                      product.save
+                  end
+              end
+          end    
+        end
+
         format.html { redirect_to(store_url, :notice => I18n.t('.thanks')) }
         format.xml  { render :xml => @order, :status => :created, :location => @order }
       else
@@ -120,6 +135,23 @@ class OrdersController < ApplicationController
   def ship
     @order = Order.find(params[:id])
     Notifier.order_shipped(@order).deliver
+
+    @line_items = LineItem.all
+    @products = Product.all
+   
+    #   for lineitem in @line_items 
+    #       if lineitem.order_id == @order.id
+    #          for product in @products
+    #              if  product.id == lineitem.product_id
+    #                  product.inventory = product.inventory - lineitem.quantity                     
+    #                  product.save
+    #              end
+    #          end
+    #      end    
+    #    end
+    #line_items = Lineitem.find(params[:id])
+    #for lineitem in line_items do
+    #end
 
     respond_to do |format|
       format.html { redirect_to(orders_url) }
