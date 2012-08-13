@@ -260,6 +260,10 @@
   padding-bottom:4px;
   background-color: #EAF2D3;
   color: #000000;
+
+  -moz-opacity: 0.5;
+  -webkit-opacity: 0.5;
+  opacity: 0.5;
 }
 
 

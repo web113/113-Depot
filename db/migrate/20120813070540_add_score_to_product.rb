@@ -1,6 +1,6 @@
 class AddScoreToProduct < ActiveRecord::Migration
   def self.up
-    add_column :products, :score, :float, :default => 0.0
+    add_column :products, :score, :float
   end
 
   def self.down

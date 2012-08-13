@@ -4,7 +4,7 @@
     <h3> <%= @product.title %></h3>
     
     <%= sanitize @product.description %>
-    Score:<%= @product.score%><br/>
+    <%= @average%>
     <span class = "price"><%= number_to_currency(@product.price) %></span>
     <% if session[:user_id] %>
       <%= button_to t('.add_html'), line_items_path(:product_id => @product,:modify => "false"),
@@ -12,7 +12,6 @@
     <% else %>
       <button class="need_to_login">Add to cart</button>
     <% end %>
-
 
     <div class = "price_line">   
     <span class = "inventory">Inventory:<%= @product.inventory%></span>
@@ -35,6 +34,10 @@ Comments:
 <tr class="alt_odd">
     <th>Context:</th>
     <th><%= comment.context %> </th>
+</tr>
+<tr class="alt_odd">
+    <th>Score:</th>
+    <th><%= comment.score %> </th>
 </tr>
 <tr class="alt_odd">
     <th>Time:</th>
@@ -66,6 +69,10 @@ Send Comments Of My Own~!:)
   <div class="field">
     <%= f.label "Context" %><br />
     <%= f.text_area  :context,:rows => 3, :cols => 40 %>
+  </div>
+  <div class="field">
+    <%= f.label "Score" %><br />
+    <%= f.text_field :score,:size => 40 %>
   </div>
   <div class="actions">
     <input type="hidden" name= "comment[create_at]" id="comment_create_at" value=<%= Time.now %>/>

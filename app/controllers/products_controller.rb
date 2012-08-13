@@ -28,6 +28,16 @@ class ProductsController < ApplicationController
       @name=nil
     end
 
+    @average = 0.00
+    sum = 0.00   
+    if @comments.size != 0
+        for com in @comments
+           sum += com.score          
+        end
+        @average = sum / @comments.size
+        @average = format("%.2f", @average)
+    end
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @product }
