@@ -68,7 +68,7 @@
               <% unless session[:user_id] %>
                 <li id="login"><%= link_to 'Login', {:controller => "sessions", :action => "new" } %><li>
               <% else %>
-                <li><a href="javascript:" onclick="jq(logout).children().find('[value=Logout]').click();">Logout</a></li>
+                <li><div id="to_logout">Logout</div></li>
               <% end %>
             </ul>
           </div>
