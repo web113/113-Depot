@@ -1,5 +1,6 @@
 class SubcategoriesController < ApplicationController
   skip_before_filter :authorize
+  skip_before_filter :isAdmin
 
   # GET /subcategories
   # GET /subcategories.xml

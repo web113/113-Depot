@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   skip_before_filter :authorize, :only => [:new, :create]
+  skip_before_filter :isAdmin, :only => [:index, :show, :new, :create]
 
   # GET /orders
   # GET /orders.xml

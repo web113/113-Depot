@@ -1,4 +1,6 @@
 Depot::Application.routes.draw do
+  get "permission/index"
+
   resources :comments
 
   resources :subcategories
