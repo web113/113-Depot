@@ -286,6 +286,13 @@
   background-color:#f9fcb5;
 }
 
+.order_detail td.shipped 
+{
+  text-align:center;
+  background-color:#f9fcb5;
+  color: #807f7e
+}
+
 .order_detail img {
   width: 60px;
   height: 80px;

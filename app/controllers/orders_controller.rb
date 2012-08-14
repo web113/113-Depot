@@ -71,9 +71,12 @@ class OrdersController < ApplicationController
     
     data = params[:order]
     data[:user_id] = session[:user_id]
+    @cart = current_cart
+
+    unless @cart.line_items.empty?
     @order = Order.new(data)
     @order.add_line_items_from_cart(current_cart)
-    @cart = current_cart
+    
     
 
     respond_to do |format|
@@ -103,6 +106,12 @@ class OrdersController < ApplicationController
         format.html { render :action => "new" }
         format.xml  { render :xml => @order.errors, :status => :unprocessable_entity }
       end
+    end
+    else
+      respond_to do |format|
+      format.html { redirect_to(store_url, :notice => "Oooops, your cart is empty!")}
+      format.xml  { render :xml => @order.errors, :status => :unprocessable_entity }
+    end
     end
   end
 
@@ -136,24 +145,9 @@ class OrdersController < ApplicationController
 
   def ship
     @order = Order.find(params[:id])
+    @order.shipped = 1
+    @order.save
     Notifier.order_shipped(@order).deliver
-
-    @line_items = LineItem.all
-    @products = Product.all
-   
-    #   for lineitem in @line_items 
-    #       if lineitem.order_id == @order.id
-    #          for product in @products
-    #              if  product.id == lineitem.product_id
-    #                  product.inventory = product.inventory - lineitem.quantity                     
-    #                  product.save
-    #              end
-    #          end
-    #      end    
-    #    end
-    #line_items = Lineitem.find(params[:id])
-    #for lineitem in line_items do
-    #end
 
     respond_to do |format|
       format.html { redirect_to(orders_url) }
