@@ -26,6 +26,7 @@ class UsersController < ApplicationController
   # GET /users/new.xml
   def new
     @user = User.new
+    @cart = current_cart
 
     respond_to do |format|
       format.html # new.html.erb

@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   skip_before_filter :authorize, :only => [:new, :create]
+  skip_before_filter :isAdmin, :only => [:index, :show, :new, :create]
 
   # GET /orders
   # GET /orders.xml
@@ -140,20 +141,6 @@ class OrdersController < ApplicationController
 
     @line_items = LineItem.all
     @products = Product.all
-   
-    #   for lineitem in @line_items 
-    #       if lineitem.order_id == @order.id
-    #          for product in @products
-    #              if  product.id == lineitem.product_id
-    #                  product.inventory = product.inventory - lineitem.quantity                     
-    #                  product.save
-    #              end
-    #          end
-    #      end    
-    #    end
-    #line_items = Lineitem.find(params[:id])
-    #for lineitem in line_items do
-    #end
 
     respond_to do |format|
       format.html { redirect_to(orders_url) }
