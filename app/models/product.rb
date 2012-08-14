@@ -31,7 +31,14 @@ class Product < ActiveRecord::Base
       find(:all)
     end
   end
-  #----------------------------------------------
+  #---------------image upload------------------------
+  def picture= (picture_filed)
+    transaction do
+      if picture_filed.size > 0 then
+        self.image_url = picture_filed
+      end     
+    end
+  end
   
   validates :title, :description, :image_url, :cate, :presence => true
   validates :price, :numericality => {:greater_than_or_equal_to => 0.01}

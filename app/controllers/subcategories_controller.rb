@@ -6,7 +6,7 @@ class SubcategoriesController < ApplicationController
   def index
     @subcategories = Subcategory.all
     @subcate= params[:subcate]
-    @results = Product.subcate(params[:subcate]) 
+    @results = Product.subcate(params[:subcate])
     @cart = current_cart
 
     respond_to do |format|

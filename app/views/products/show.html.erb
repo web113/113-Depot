@@ -78,7 +78,7 @@ Send Comments Of My Own~!:)
   </div>
   <div class="field">
     <%= f.label "Score" %><br />
-    <%= f.text_field :score,:size => 40 %>
+    <%= f.select :score, Comment::SCORE_TYPES, :prompt => "Select a score" %>
   </div>
   <div class="actions">
     <input type="hidden" name= "comment[create_at]" id="comment_create_at" value=<%= Time.now %>/>

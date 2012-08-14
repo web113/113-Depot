@@ -44,13 +44,16 @@ class LineItemsController < ApplicationController
   def create
     @cart = current_cart
     product = Product.find(params[:product_id])
+    num = product.inventory
     @modify = params[:modify]
-    
-    if @modify == "false"
+  
+    if num >=1
+    if @modify == "false" 
       @line_item = @cart.add_product(product.id) #使用高级add_product的方法
     else
       number = params[:number].to_i
       @line_item = @cart.modify_product(product.id, number) #使用高级add_product的方法
+    end
     end
 
     respond_to do |format|
