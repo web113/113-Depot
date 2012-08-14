@@ -1,10 +1,17 @@
 class SearchesController < ApplicationController
-  skip_before_filter :authorize
   
   def index
   	@cart = current_cart
     if params[:q]
-      @results = Product.search(params[:q])
+    	@query = params[:q]
+    	q_item = @query.split(" ")
+    	#@results = Product.search(@query)
+    	@results = []
+    	
+    	for item in q_item
+    	   @results = @results + Product.search(item)
+    	end
+        #@results = Product.search(@query)
     end
   end
 end

@@ -18,10 +18,12 @@ class Product < ActiveRecord::Base
   #-------------search-------------------------
   def self.search(query)
     if query 
+      #q_item = query.split(" ")
       #find(:all, :conditions => ["title LIKE ?", "%#{query}%"])
-      #find(:all, :conditions => ['title like :title',:title=>"%#{query}%"])
-    
-      find(:all, :conditions => ['title like ? OR cate like ?',"%#{query}%", "%#{query}%"])
+      #find(:all, :conditions => ['title like :title',:title=>"%#{query}%"])  
+      #for item in q_item
+         find(:all, :conditions => ['title like ? OR cate like ?',"%#{query}%", "%#{query}%"])
+      #end
     else
       find(:all)
     end

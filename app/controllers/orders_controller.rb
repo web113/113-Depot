@@ -67,6 +67,8 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.xml
   def create
+
+    
     data = params[:order]
     data[:user_id] = session[:user_id]
     @order = Order.new(data)

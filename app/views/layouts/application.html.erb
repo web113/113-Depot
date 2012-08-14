@@ -25,11 +25,7 @@
           <%= submit_tag 'submit' %>
           <%= javascript_tag "$$('.locale input').each(Element.hide)"%>
         <% end %>	
-        <!--search-->
-        <%= form_tag searches_path, :class => 'search', :method => 'get' do %>
-      <%= text_field_tag "q", params[:q] %>
-      <%= submit_tag "Search" %>
-      <% end %>
+        
 
       </div>
 
@@ -82,7 +78,10 @@
 
                 <div id="searchButton"><img src="../images/search.png" alt="search" /></div>
                 <div class="hidden"><%= submit_tag "search" %></div>
-                <div id="searchBox"><%= text_field_tag 'q', params[:q] %></div>
+                <div id="searchBox">
+                  <%= text_field_tag :q %>
+                </div>
+                <%= @q_item %>
               <% end %>
             </div>
           </div>
