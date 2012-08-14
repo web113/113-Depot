@@ -8,6 +8,7 @@ jq(document).ready(function() {
   jq("td input").live("blur", afterModify);
   jq(".need_to_login").click(login);
   jq("#to_logout").click(logout);
+  jq("#searchButton").click(search);
 });
 
 var setElementHoverEffect = function(element) {
@@ -112,4 +113,8 @@ var login = function() {
 
 var logout = function() {
   jq("#logout").children().find('[value=Logout]').click();
-}
+};
+
+var search = function() {
+  jq(this).next().children().eq(0).click();
+};
