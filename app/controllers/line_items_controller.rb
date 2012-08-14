@@ -44,27 +44,37 @@ class LineItemsController < ApplicationController
   def create
     @cart = current_cart
     product = Product.find(params[:product_id])
-    num = product.inventory
+    remainNumber = product.inventory
     @modify = params[:modify]
   
-    if num >=1
     if @modify == "false" 
       @line_item = @cart.add_product(product.id) #使用高级add_product的方法
     else
       number = params[:number].to_i
       @line_item = @cart.modify_product(product.id, number) #使用高级add_product的方法
     end
+
+    if remainNumber >= @line_item.quantity
+      @result = "true"
+    else
+      @result = "false"
     end
 
     respond_to do |format|
-      if @line_item.save
-        #format.html { redirect_to(@line_item.cart, :notice => 'Line item was successfully created.') }
-        format.html { redirect_to(store_url)}
-        format.js   {@current_item = @line_item }
-        format.xml  { render :xml => @line_item, :status => :created, :location => @line_item }
+      if @result == "false"
+          format.html { redirect_to(store_url)}
+          format.js   {@current_item = @line_item }
+          format.xml  { render :xml => @line_item, :status => :created, :location => @line_item }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @line_item.errors, :status => :unprocessable_entity }
+        if @line_item.save
+          #format.html { redirect_to(@line_item.cart, :notice => 'Line item was successfully created.') }
+          format.html { redirect_to(store_url)}
+          format.js   {@current_item = @line_item }
+          format.xml  { render :xml => @line_item, :status => :created, :location => @line_item }
+        else
+          format.html { render :action => "new" }
+          format.xml  { render :xml => @line_item.errors, :status => :unprocessable_entity }
+        end
       end
     end
   end

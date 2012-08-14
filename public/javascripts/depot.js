@@ -118,3 +118,9 @@ var logout = function() {
 var search = function() {
   jq(this).next().children().eq(0).click();
 };
+
+var showResult = function(result) {
+  if (result != "true") {
+    alert("Sorry, we haven't got enough books for you to buy!");
+  }
+};

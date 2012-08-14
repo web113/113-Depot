@@ -5,3 +5,5 @@ page.replace_html('cart', render(@cart))
 page.call("dragAndDrop")
 
 page.call("showEffect", @modify)
+
+page.call("showResult", @result)
