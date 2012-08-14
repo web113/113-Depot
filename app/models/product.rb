@@ -18,7 +18,10 @@ class Product < ActiveRecord::Base
   #-------------search-------------------------
   def self.search(query)
     if query 
-      find(:all, :conditions => ['title LIKE ?', "%#{query}%"])
+      #find(:all, :conditions => ["title LIKE ?", "%#{query}%"])
+      #find(:all, :conditions => ['title like :title',:title=>"%#{query}%"])
+    
+      find(:all, :conditions => ['title like ? OR cate like ?',"%#{query}%", "%#{query}%"])
     else
       find(:all)
     end
@@ -27,6 +30,7 @@ class Product < ActiveRecord::Base
   def self.subcate(query)
     if query 
       find(:all, :conditions => ['cate LIKE ?', "%#{query}%"])
+      #find(:all, :conditions => {:cate => query})
     else
       find(:all)
     end

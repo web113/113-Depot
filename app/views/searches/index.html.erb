@@ -6,6 +6,14 @@
     
     <h3> <%= product.title %></h3>
     
+    <%allcates = product.cate.split(";") %>
+    <%for cate in allcates%>
+       <%if cate != nil%>
+          <%= link_to (cate), {:controller => "subcategories", :action => "index",:subcate => cate } %>
+       <%end%>
+    <%end%>
+    <br/>
+    
     <%= sanitize product.description %>
     <span class = "price"><%= number_to_currency(product.price) %></span>
   <%= button_to t('.add_html'), line_items_path(:product_id => product, :modify => "false"),
