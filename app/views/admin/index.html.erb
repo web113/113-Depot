@@ -2,14 +2,14 @@
   <p id="notice"><%= flash[:alert] %></p>
 <% end %>
 
-<h1>Welcome <%= @user.name %></h1>
+<h1><%= t('.Welcome') %> <%= @user.name %></h1>
 
 <div>
-  It's <%= Time.now %>
-  We have <%= pluralize(@total_orders, "order") %>
+  <%= t('.It') %> <%= Time.now %>
+  <%= t('.We have') %> <%= pluralize(@total_orders, t('.order') ) %>
 </div>
 
 <br />
 <br />
 
-<%= link_to "change the password", {:controller => "users", :action => "edit", :id => @user.id } %>
+<%= link_to t('.change the password'), {:controller => "users", :action => "edit", :id => @user.id } %>

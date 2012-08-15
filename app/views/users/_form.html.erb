@@ -13,20 +13,20 @@
     <% end %>
 
     <div class="form_content">
-    	<div class="form_title">Register</div>
+    	<div class="form_title"><%= t('.User') %></div>
 
         <div class="form_item">
-          <%= f.label :name, t('.name') + ":" %>
+          <%= f.label  t('.name') + ":" %>
           <%= f.text_field :name, :size => 40 %>
         </div>
 
         <div class="form_item">
-          <%= f.label :password, t('.Password') + ":" %>
+          <%= f.label  t('.Password') + ":" %>
           <%= f.password_field :password, :size => 40 %>
         </div>
 
         <div class="form_item">
-          <%= f.label :password_confirmation, t('.Confirm') + ":" %>
+          <%= f.label  t('.Confirm') + ":" %>
           <%= f.password_field :password_confirmation, :size => 40 %>
         </div>
         
