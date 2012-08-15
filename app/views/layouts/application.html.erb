@@ -66,7 +66,7 @@
                 <% end %>
               <% end %>
 
-              <li><%= link_to 'Help', {:controller => "help", :action => "index" } %></li>
+              <li><%= link_to t('.Help'), {:controller => "help", :action => "index" } %></li>
 
               <% unless session[:user_id] %>
                 <li id="login"><%= link_to t('.Login'), {:controller => "sessions", :action => "new" } %><li>
