@@ -25,6 +25,9 @@
 
 #product_list table {
   border-collapse: collapse;
+    -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
 
 #product_list table tr td {
@@ -62,11 +65,25 @@
 }
 
 #product_list .list_line_even {
-  background:   #e0f8f8;
+  /*background:   #e0f8f8;*/
+  background: #EAF2D3;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-opacity: 0.9;
+  -webkit-opacity: 0.9;
+  opacity: 0.9;
 }
 
 #product_list .list_line_odd {
-  background:   #f8b0f8;
+  /*background:   #f8b0f8;*/
+  background: #ffffff;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-opacity: 0.9;
+  -webkit-opacity: 0.9;
+  opacity: 0.9;
 }
 
 /* An entry in the store catalog */

@@ -25,7 +25,7 @@ en:
       empty:     "Empty cart"
       checkout:  "Checkout"
       Total:     "Total"
-      empty:     "Your cart is empty!"
+      empty:     "Empty the cart!"
       sure:      "Are you sure?"
     edit:
       Show:      "Show"
