@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   skip_before_filter :authorize, :only => [:new, :create]
-  skip_before_filter :isAdmin, :only => [:index, :show, :new, :create]
+  skip_before_filter :isAdmin
+  before_filter :isShipped, :only => [:edit, :destroy]
 
   # GET /orders
   # GET /orders.xml
@@ -63,56 +64,53 @@ class OrdersController < ApplicationController
   # GET /orders/1/edit
   def edit
     @order = Order.find(params[:id])
+    @cart = current_cart
   end
 
   # POST /orders
   # POST /orders.xml
   def create
-
-    
     data = params[:order]
     data[:user_id] = session[:user_id]
     @cart = current_cart
 
     unless @cart.line_items.empty?
-    @order = Order.new(data)
-    @order.add_line_items_from_cart(current_cart)
-    
-    
+      @order = Order.new(data)
+      @order.add_line_items_from_cart(current_cart)
 
-    respond_to do |format|
-      if @order.save
-        user = User.find_by_id(session[:user_id])
-        for line_item in user.cart.line_items
-          LineItem.destroy(line_item)
-        end
-        Notifier.order_received(@order).deliver
+      respond_to do |format|
+        if @order.save
+          user = User.find_by_id(session[:user_id])
+          for line_item in user.cart.line_items
+            LineItem.destroy(line_item)
+          end
+          Notifier.order_received(@order).deliver
 
-        @line_items = LineItem.all
-        @products = Product.all
-        for lineitem in @line_items 
-           if lineitem.order_id == @order.id
+          @line_items = LineItem.all
+          @products = Product.all
+          for lineitem in @line_items 
+            if lineitem.order_id == @order.id
               for product in @products
-                  if  product.id == lineitem.product_id
-                      product.inventory = product.inventory - lineitem.quantity                     
-                      product.save
-                  end
+                if  product.id == lineitem.product_id
+                  product.inventory = product.inventory - lineitem.quantity                     
+                  product.save
+                end
               end
-          end    
-        end
+            end    
+          end
 
-        format.html { redirect_to(store_url, :notice => I18n.t('.thanks')) }
-        format.xml  { render :xml => @order, :status => :created, :location => @order }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @order.errors, :status => :unprocessable_entity }
+          format.html { redirect_to(store_url, :notice => I18n.t('.thanks')) }
+          format.xml  { render :xml => @order, :status => :created, :location => @order }
+        else
+          format.html { render :action => "new" }
+          format.xml  { render :xml => @order.errors, :status => :unprocessable_entity }
+        end
       end
-    end
     else
       respond_to do |format|
-      format.html { redirect_to(store_url, :notice => "Oooops, your cart is empty!")}
-      format.xml  { render :xml => @order.errors, :status => :unprocessable_entity }
-    end
+        format.html { redirect_to(store_url, :notice => "Oooops, your cart is empty!")}
+        format.xml  { render :xml => @order.errors, :status => :unprocessable_entity }
+      end
     end
   end
 
@@ -155,4 +153,11 @@ class OrdersController < ApplicationController
       format.xml  { render :xml => @order }
     end
   end
+
+  protected
+    def isShipped
+      unless params[:id] && Order.find(params[:id]).shipped == 0
+        redirect_to permission_url
+      end
+    end
 end

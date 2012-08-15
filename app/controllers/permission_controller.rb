@@ -3,6 +3,7 @@ class PermissionController < ApplicationController
   skip_before_filter :isAdmin
 
   def index
+    @cart = current_cart
   end
 
 end

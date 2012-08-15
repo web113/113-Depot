@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   protected
   def isAdmin
     unless User.find_by_id(session[:user_id]).name == "admin"
-      redirect_to login_url, :notice => "Please log in"
+      redirect_to permission_url
     end
   end
   
