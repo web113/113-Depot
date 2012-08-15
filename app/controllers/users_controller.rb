@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
   def index
-    @users = User.order(:name)
+    @users = User.order(:name).paginate :page =>params[:page],:per_page => 10
     @cart = current_cart
 
     respond_to do |format|

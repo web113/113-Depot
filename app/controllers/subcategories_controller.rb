@@ -1,3 +1,4 @@
+require 'will_paginate/array' 
 class SubcategoriesController < ApplicationController
   skip_before_filter :authorize
   skip_before_filter :isAdmin
@@ -8,6 +9,7 @@ class SubcategoriesController < ApplicationController
     @subcategories = Subcategory.all
     @subcate= params[:subcate]
     @results = Product.subcate(params[:subcate])
+    @results = @results.paginate :page =>params[:page],:per_page => 5
     @cart = current_cart
 
     respond_to do |format|
