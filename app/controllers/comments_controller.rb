@@ -53,7 +53,7 @@ class CommentsController < ApplicationController
       else
         #format.html { render :action => "new" }
         format.html { redirect_to(url_for(:controller => "products", :action => "show", :id => @comment.product_id),
-                                          :notice => 'Oooooops!!') }
+                                          :notice => 'Sorry, the title and the content must not be empty!') }
         format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
       end
     end

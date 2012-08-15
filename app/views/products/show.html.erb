@@ -36,8 +36,13 @@
 </div>
 
 <div class = "comment">
-Comments:
+  <%= t(".Comment") %>
 </div>
+
+<% if @comments.length == 0 %>
+  <div><%= t('.NoComments')%></div>
+<% end %>
+
 <% @comments.each do |comment|%>
 <table class="product_detail">
 <tr>
@@ -74,21 +79,26 @@ Comments:
 <% end %>
 
 <% if session[:user_id] %>
+<% if flash[:notice] %>
+  <p id="notice"><%= flash[:notice] %></p>
+<% end %>
+
 <div class = "comment">
-Send Comments Of My Own~!:)
+  <%= t(".Send Comment Of My Own") %>~!:)
 </div>
 
 <%= form_for @comment do |f| %>
 <div class="field">
-    <%= f.label "Title:" %><br />
+    <%= f.label t(".Title") + ":" %><br />
     <%= f.text_field :title, :size => 40%>
   </div>
   <div class="field">
-    <%= f.label "Content:" %><br />
+    <%= f.label t(".Content") + ":" %><br />
     <%= f.text_area  :context,:rows => 3, :cols => 40 %>
+    <%= @comment.title %>
   </div>
   <div class="field">
-    <%= f.label "Score:" %><br />
+    <%= f.label t(".Score") + ":" %><br />
     <%= f.select :score, Comment::SCORE_TYPES, :prompt => "Select a score" %>
   </div>
   <div class="actions">
@@ -99,7 +109,7 @@ Send Comments Of My Own~!:)
   </div>
   <div class="actions">
     <input type="hidden" name= "comment[product_id]" id="comment_product_id" value=<%= " #{ @product.id}" %>/>
-    <%=submit_tag "Submit" %>
+    <%=submit_tag t(".Submit") %>
   </div>
 <%end%>
 <% end %>

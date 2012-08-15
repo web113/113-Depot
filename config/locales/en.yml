@@ -143,11 +143,14 @@ en:
       add_html:     "Add to Cart"  
       Add to cart:      "Add to cart"
       Inventory:        "Inventory"
+      NoComments:       "No one comments on it!"
       Comment:          "Comment"
-      Send comment on my own:  "Send comment on my own"
+      Send Comment Of My Own:  "Send Comment Of My Own"
       Title:            "Title"
-      Context:          "Context"
+      Content:          "Content"
       Score:            "Score"
+      Submit:           "Submit"
+      NotEmpty:   "Can't be empty"
   categories:
     form:
       errors:       "errors"

@@ -143,11 +143,14 @@ ch:
       add_html:     "加入购物车"  
       Add to cart:      "加入购物车"
       Inventory:        "库存"
+      NoComments:       "没有人评论它！"
       Comment:          "评论"
-      Send comment on my own:  "自己评论！"
+      Send Comment Of My Own:  "发表自己的评论！"
       Title:            "标题"
-      Context:          "内容"
+      Content:          "内容"
       Score:            "评分"  
+      Submit:           "提交"
+      NotEmpty:         "必需非空"
   categories:
     form:
       errors:       "个错误"
