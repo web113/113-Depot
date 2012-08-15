@@ -13,7 +13,8 @@ Product.create(:title => 'Web Design for Developers',
       </p>},
   :image_url =>   '/images/wd4d.jpg',    
   :price => 42.95,
-  :cate =>'programming;web;UI;interactive design')
+  :cate =>'programming;web;UI;interactive design',
+  :category => 'Technology')
 # . . .
 Product.create(:title => 'Programming Ruby 1.9',
   :description =>
@@ -24,7 +25,8 @@ Product.create(:title => 'Programming Ruby 1.9',
       </p>},
   :image_url => '/images/ruby.jpg',
   :price => 49.50,
-  :cate =>'programming;web;algorithm')
+  :cate =>'programming;web;algorithm',
+  :category => 'Technology')
 # . . .
 
 Product.create(:title => 'Rails Test Prescriptions',
@@ -39,7 +41,8 @@ Product.create(:title => 'Rails Test Prescriptions',
       </p>},
   :image_url => '/images/rtp.jpg',
   :price => 43.75,
-  :cate =>'programming;web')
+  :cate =>'programming;web',
+  :category => 'Technology')
 #...
 
 Product.create(:title => 'The Curious Case of Benjamin Button',
@@ -50,7 +53,8 @@ Product.create(:title => 'The Curious Case of Benjamin Button',
       </p>},
   :image_url => '/images/benjamin.jpg',
   :price => 23.75,
-  :cate =>'novel;detective')
+  :cate =>'novel;detective',
+  :category => 'Literature')
 # . . .
 
 Product.create(:title => 'Debug It!',
@@ -61,7 +65,8 @@ Product.create(:title => 'Debug It!',
       </p>},
   :image_url => '/images/debug.jpg',
   :price => 19.99,
-  :cate =>'programming;algorithm')  
+  :cate =>'programming;algorithm',
+  :category => 'Technology') 
 # . . .
 
 Product.create(:title => 'Lowboy',
@@ -72,7 +77,8 @@ Product.create(:title => 'Lowboy',
       </p>},
   :image_url => '/images/lowboy.jpg',
   :price => 22.99,
-  :cate =>'novel;romance')
+  :cate =>'novel;romance',
+  :category => 'Literature')
 # . . .
 
 Product.create(:title => 'Waterfront',
@@ -83,7 +89,8 @@ Product.create(:title => 'Waterfront',
       </p>},
   :image_url => '/images/waterfront.jpg',
   :price => 11.99,
-  :cate =>'novel')
+  :cate =>'novel',
+  :category => 'Literature')
 
 Product.create(:title => 'Harry Potter and the Deathly Hallows',
   :description => 
@@ -96,7 +103,8 @@ Product.create(:title => 'Harry Potter and the Deathly Hallows',
       </p>},
   :image_url => '/images/deathlyhallows.jpg',
   :price => 23.99,
-  :cate =>'novel;magic;fairy tale;legend')
+  :cate =>'novel;magic;fairy tale;legend',
+  :category => 'Literature')
 
 Product.create(:title => 'The Tales of Beedle the Bard',
   :description => 
@@ -107,7 +115,8 @@ Product.create(:title => 'The Tales of Beedle the Bard',
       </p>},
   :image_url => '/images/beedlethebard.jpg',
   :price => 3.99,
-  :cate =>'novel;magic;fairy tale')
+  :cate =>'novel;magic;fairy tale',
+  :category => 'Literature')
 
 Product.create(:title => 'Pride and Prejudice',
   :description => 
@@ -120,7 +129,8 @@ Product.create(:title => 'Pride and Prejudice',
       </p>},
   :image_url => '/images/pride.jpg',
   :price => 29.99,
-  :cate =>'novel;romance')
+  :cate =>'novel;romance',
+  :category => 'Literature')
 
 Product.create(:title => 'Sherlock Holmes',
   :description => 
@@ -134,7 +144,8 @@ Product.create(:title => 'Sherlock Holmes',
       </p>},
   :image_url => '/images/sherlock.jpg',
   :price => 19.99,
-  :cate =>'novel;detective')
+  :cate =>'novel;detective',
+  :category => 'Literature')
 
 Product.create(:title => 'Death on the Nile',
   :description => 
@@ -146,7 +157,8 @@ Product.create(:title => 'Death on the Nile',
       </p>},
   :image_url => '/images/deathofthenile.jpg',
   :price => 17.45,
-  :cate =>'novel;detective')
+  :cate =>'novel;detective',
+  :category => 'Literature')
 
 Product.create(:title => 'Time Machine',
   :description => 
@@ -157,7 +169,8 @@ Product.create(:title => 'Time Machine',
       </p>},
   :image_url => '/images/timemachine.jpg',
   :price => 23.99,
-  :cate =>'novel;romance;science fiction')
+  :cate =>'novel;romance;science fiction',
+  :category => 'Literature')
 
 Product.create(:title => 'Steve Jobs',
   :description => 
@@ -170,7 +183,8 @@ Product.create(:title => 'Steve Jobs',
       </p>},
   :image_url => '/images/jobs.jpg',
   :price => 49.99,
-  :cate =>'biography')
+  :cate =>'biography',
+  :category => 'Literature')
 
 Product.create(:title => 'The Warren Buffett Way',
   :description => 
@@ -183,7 +197,8 @@ Product.create(:title => 'The Warren Buffett Way',
       </p>},
   :image_url => '/images/warrenbuffett.jpg',
   :price => 39.99,
-  :cate =>'finance and investment;biography')
+  :cate =>'finance and investment;biography',
+  :category => 'Literature')
 
 Product.create(:title => 'Principles of Economics',
   :description => 
@@ -193,7 +208,8 @@ Product.create(:title => 'Principles of Economics',
       </p>},
   :image_url => '/images/principlessofeconomics.jpg',
   :price => 34.99,
-  :cate =>'economics and financials;socialty')
+  :cate =>'economics and financials;socialty',
+  :category => 'Management')
 
 Product.create(:title => 'History of Religions',
   :description => 
@@ -206,7 +222,8 @@ Product.create(:title => 'History of Religions',
       </p>},
   :image_url => '/images/historyofreligions.jpg',
   :price => 59.99,
-  :cate =>'history;socialty;religion')
+  :cate =>'history;socialty;religion',
+  :category => 'Life')
 
 Product.create(:title => 'Sofies Verden',
   :description => 
@@ -218,7 +235,8 @@ Product.create(:title => 'Sofies Verden',
       </p>},
   :image_url => '/images/sofies.jpg',
   :price => 19.99,
-  :cate =>'novel;philosophy')
+  :cate =>'novel;philosophy',
+  :category => 'Life')
 
 Product.create(:title => 'Lessons for Students in Architecture',
   :description => 
@@ -227,7 +245,8 @@ Product.create(:title => 'Lessons for Students in Architecture',
       </p>},
   :image_url => '/images/architecture.jpg',
   :price => 69.99,
-  :cate =>'architecture')
+  :cate =>'architecture',
+  :category => 'Life')
 
 Product.create(:title => 'Harry Potter:Page to Screen',
   :description => 
@@ -236,7 +255,8 @@ Product.create(:title => 'Harry Potter:Page to Screen',
       </p>},
   :image_url => '/images/pagetoscreen.jpg',
   :price => 99.99,
-  :cate =>'novel;magic;movie')
+  :cate =>'novel;magic;movie',
+  :category => 'Life')
 
 
 # ...
