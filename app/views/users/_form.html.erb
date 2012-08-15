@@ -2,7 +2,7 @@
   <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+        <h2><%= pluralize(@user.errors.count, "error") %> <%= t('.prohibited this user from being saved') %></h2>
 
         <ul>
         <% @user.errors.full_messages.each do |msg| %>
@@ -13,20 +13,20 @@
     <% end %>
 
     <fieldset>
-    	<legend>Enter User Details</legend>
+    	<legend><%= t('.Enter User Details') %></legend>
 
         <div>
-          <%= f.label :name %>
+          <%= f.label t('.name') %>
           <%= f.text_field :name, :size => 40 %>
         </div>
 
         <div>
-          <%= f.label :password, 'Password' %>
+          <%= f.label t('.password') %>
           <%= f.password_field :password, :size => 40 %>
         </div>
 
         <div>
-          <%= f.label :password_confirmation, 'Confirm' %>
+          <%= f.label t('.password_confirmation') %>
           <%= f.password_field :password_confirmation, :size => 40 %>
         </div>
         

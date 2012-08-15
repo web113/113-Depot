@@ -6,16 +6,43 @@ en:
       questions:  "Questions"
       news:       "News"
       contact:    "Contact"
+      Pragprog Books Online Store:   "Pragprog Books Online Store"
+      Category:   "Category"
+      Orders:     "Orders"
+      Products:   "Products"
+      Users:      "Users"
+      Help:       "Help"
+      Login:      "Login"
+      Logout:     "Logout"
   store:
    index:
      title_html: "Your Pragmatic Catalog"
      add_html:        "Add to Cart"
+     Add to cart:     "Add to cart"
   carts:
     cart:
       title:     "Your Cart"
       empty:     "Empty cart"
       checkout:  "Checkout"
-      
+      Total:     "Total"
+      empty:     "Your cart is empty!"
+      sure:      "Are you sure?"
+    edit:
+      Show:      "Show"
+      Back:      "Back"
+    index:
+      Listing carts:  "Listing carts"
+      Products:       "Products"
+      Price:          "Price"
+      Quantity:       "Quantity"
+      Total:          "Total"
+      button:         "button"
+      delete:         "delete"
+      sure:           "Are you sure?"
+    new:
+      Back:           "Back"
+    show:
+      Your Cart:      "Your Cart"
   number:
     currency:
       format:
@@ -28,6 +55,7 @@ en:
   orders:
     new:
       legend:      "Please Enter your Details"
+      Order:       "Order"
     form:
       name:        "Name"
       address:     "Address"
@@ -35,8 +63,33 @@ en:
       pay_type:    "Pay with"
       pay_prompt:  "Select a payment method"
       submit:      "Place Order"
-      
-      
+    edit:
+      Show:        "Show"
+      Back:        "Back"
+    index:
+      Listing orders:   "Listing orders"      
+      Edit:             "Edit"
+      Destroy:          "Destroy"
+      sure:             "Are you sure?"
+      Ship:             "Ship"
+      User:             "User"
+      Name:             "Name"
+      Address:          "Address"
+      Email:            "Email"
+      Pay type:         "Pay type"
+      Product:          "Product"
+      Title:            "Title"
+      Price:            "Price"
+      Quantity:         "Quantity"
+      Total:            "Total"
+      New Order:        "New Order"
+    show:
+      Name:             "Name:"
+      Address:          "Address:"
+      Email:            "Email:"
+      Pay type:         "Pay type:"
+      Edit:             "Edit"
+      Back:             "Back"
   activerecord:
     errors:
       messages:
@@ -63,5 +116,140 @@ en:
       add_html:     "Add to Cart"    
 
   products:  
+    form:
+      error:       "error"
+      prohibited this product from being saved:   "prohibited this product from being saved"
+      title:        "title"
+      description:  "description"
+      image_url:    "image_url"
+      price:        "price"
+      category id:  "category id"
+      inventory:    "inventory"
+    edit:
+      Show:         "Show"
+      Back:         "Back"
+    index:
+      Listing products: "Listing products"
+      Show:             "Show"
+      Edit:             "Edit"
+      Destroy:          "Destroy"
+      sure:             "Are you sure?"
+      delete:           "delete"
+      New product:      "New product"
+    new:
+      Back:             "Back"
     show:
       add_html:     "Add to Cart"  
+      Add to cart:      "Add to cart"
+      Inventory:        "Inventory"
+      Comment:          "Comment"
+      Send comment on my own:  "Send comment on my own"
+      Title:            "Title"
+      Context:          "Context"
+      Score:            "Score"
+  categories:
+    form:
+      errors:       "errors"
+      prohibited this category from being saved:   "prohibited this category from being saved"
+    edit:
+      Show:         "Show"
+      Back:         "Back"
+    index:
+      My Categories:  "My Categories"
+    new:
+      Back:         "Back"
+    show:
+      Name:         "Name:"
+      Parentid:     "Parentid:"
+      Edit:         "Edit"
+      Back:         "Back"
+  comments:
+    form:
+      errors:       "errors"
+      prohibited this comment from being saved:   "prohibited this comment from being saved"
+      title:        "title"
+      context:      "context"
+      product_id:   "product_id"
+      create_at:    "create_at"
+    edit:
+      Show:         "Show"
+      Back:         "Back"
+    index:
+      Listing comments:   "Listing comments"
+      Title:              "Title"
+      Context:            "Context"
+      Products:           "Products"
+      Create at:          "Create at"
+      Show:               "Show"
+      Edit:               "Edit"
+      Destroy:            "Destroy"
+      sure:               "Are you sure?"
+      New Comment:        "New Comment"
+    new:
+      Back:               "Back"
+    show:
+      Title:              "Title"
+      Context:            "Context"
+      Product:            "Product"
+      Create at:          "Create at"
+      Edit:               "Edit"
+      Back:               "Back"
+  questions:
+    Questions:            "Questions"
+  sessions:
+    new:
+      Login:              "Login"
+      Name:               "Name"
+      Password:           "Password"
+  subcategories:
+    form:
+      prohibited this subcategory from being saved: "prohibited this subcategory from being saved"
+      name:                 "name"
+      parent:               "parent"
+    edit:
+      Show:                 "Show"
+      Back:                 "Back"
+    index:
+      Add to cart:          "Add to cart"
+    new:
+      Back:                 "Back"
+    show:
+      Name:                 "name:"
+      Parent:               "parent:"
+      Edit:                 "Edit"
+      Back:                 "Back"
+      
+  contacts:  
+      index:
+        
+        Contacts:             "contacts"
+  help:
+    index:
+      Help:                  "Help"
+  
+  users:
+    form:
+      prohibited this user from being saved:  "prohibited this user from being saved"
+      Enter User Details:    "Enter User Details"
+      name:                "name"
+      password:            "password"
+      password_confirmation:  "password_confirmation"      
+    edit:
+      Show:                "Show"
+      Back:                "Back"
+    index:
+      list users:          "list users"
+      Name:                "Name"
+      show:                "show"
+      edit:                "edit"
+      destroy:             "destroy"
+      sure:                "Are you sure?"
+      new user:            "new user"
+    new:
+      Back:                "Back"
+    show:
+      Name:                "Name:"
+      Hashed password:     "Hashed password:"
+      Salt:                "Salt:"
+      Edit:                "Edit"
+      Back:                "Back"

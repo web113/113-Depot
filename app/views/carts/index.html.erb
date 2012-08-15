@@ -1,12 +1,12 @@
-<h1>Listing carts</h1>
+<h1><%= t('.Listing carts') %></h1>
 
 <table class="cart_detail">
 <tr>
-<th colspan="2">Product</th>
-<th width = "100">Price</th>
-<th width = "100">Quantity</th>
-<th width = "100">Total</th>
-<th width = "100">button</th>
+<th colspan="2"><%= t('.Products') %></th>
+<th width = "100"><%= t('.Price') %></th>
+<th width = "100"><%= t('.Quantity') %></th>
+<th width = "100"><%= t('.Total') %></th>
+<th width = "100"><%= t('.button') %></th>
 </tr>
 
 <tr class="alt_odd">
@@ -26,7 +26,7 @@
 <td><%= number_to_currency(item.product.price) %></td>
 <td><%= item.quantity %></td>
 <td><%= number_to_currency(item.product.price*item.quantity) %></td>
-<td><%= button_to 'delete', item, :method => :delete, :confirm => 'Are you sure?' %></td>
+<td><%= button_to t('.delete'), item, :method => :delete, :confirm => t('.sure') %></td>
 
 </tr>
 <%end%>

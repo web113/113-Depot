@@ -37,7 +37,7 @@
         <%= button_to t('.add_html'), line_items_path(:product_id => product, :modify => "false"),
             :remote => true %>
       <% else %>
-        <button class="need_to_login">Add to cart</button>
+        <button class="need_to_login"><%= t('.Add to cart') %></button>
       <% end %>
 
     </div>

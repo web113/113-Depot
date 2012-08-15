@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b><%= t('.Name') %></b>
   <%= @subcategory.name %>
 </p>
 
 <p>
-  <b>Parent:</b>
+  <b><%= t('.Parent') %></b>
   <%= @subcategory.parent %>
 </p>
 
 
-<%= link_to 'Edit', edit_subcategory_path(@subcategory) %> |
-<%= link_to 'Back', subcategories_path %>
+<%= link_to t('.Edit'), edit_subcategory_path(@subcategory) %> |
+<%= link_to t('.Back'), subcategories_path %>

@@ -1,0 +1,252 @@
+ch:
+  layouts:
+    application:
+      title:      "实用书目录"
+      home:       "主页"
+      questions:  "问题"
+      news:       "新闻"
+      contact:    "联系"
+      Pragprog Books Online Store:   "Progprog网上书店"
+      Category:   "分类"
+      Orders:     "订单"
+      Products:   "商品"
+      Users:      "用户"
+      Help:       "帮助"
+      Login:      "登入"
+      Logout:     "退出"
+  store:
+   index:
+     title_html: "您的实用目录"
+     add_html:        "加入购物车"
+     Add to cart:     "加入购物车"
+  carts:
+    cart:
+      title:     "您的购物车"
+      empty:     "清空购物车"
+      checkout:  "结账"
+      Total:     "总额"
+      empty:     "清空购物车"
+      sure:      "你确定吗？" 
+    edit:
+      Show:      "显示"
+      Back:      "返回"   
+    index:
+      Listing carts:  "购物车列表"
+      Products:       "商品"
+      Price:          "价格"
+      Quantity:       "数量"
+      Total:          "总额"
+      button:         "按钮"
+      delete:         "删除"
+      sure:           "你确定吗？"
+    new:
+      Back:           "返回"
+    show:
+      Your Cart:      "您的购物车"
+  number:
+    currency:
+      format:
+        unit:   "￥"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format:    "%u%n"
+
+  orders:
+    new:
+      legend:      "请输入您的详细信息"
+      Order:       "订单"
+    form:
+      name:        "姓名"
+      address:     "地址"
+      email:       "电子邮箱"
+      pay_type:    "付款方式"
+      pay_prompt:  "选择一种付款方式"
+      submit:      "下订单"
+    edit:
+      Show:        "显示"
+      Back:        "返回"      
+    index:
+      Listing orders:   "订单列表"      
+      Edit:             "编辑"
+      Destroy:          "消除"
+      sure:             "你确定吗？"
+      Ship:             "发送"
+      User:             "用户"
+      Name:             "姓名"
+      Address:          "地址"
+      Email:            "邮箱"
+      Pay type:         "付款方式"
+      Product:          "商品"
+      Title:            "标题"
+      Price:            "价格"
+      Quantity:         "数量"
+      Total:            "总额"
+      New Order:        "新订单"
+    show:
+      Name:             "姓名:"
+      Address:          "地址:"
+      Email:            "邮箱:"
+      Pay type:         "付款方式:"
+      Edit:             "编辑"
+      Back:             "返回"        
+  activerecord:
+    errors:
+      messages:
+        inclusion: "不包括在列表中"
+        blank:     "不能为空"
+  
+  errors:
+    template:
+      body:        "下面这些地方存在问题 "
+      header:
+        one:       "存在一个问题导致订单不能被保存"
+        other:     "存在%{count}个问题导致订单不能被保存"
+        
+  
+  thanks:          "多谢您的惠顾"
+   
+           
+  searches:
+    index:
+      add_html:     "加入购物车"
+  
+  subcategories:
+    index:
+      add_html:     "加入购物车"    
+
+  products: 
+    form:
+      error:       "个错误"
+      prohibited this product from being saved:   "阻碍这件商品被保存"
+      title:        "标题"
+      description:  "描述"
+      image_url:    "图片地址"
+      price:        "价格"
+      category id:  "分类栏目"
+      inventory:    "库存" 
+    edit:
+      Show:         "显示"
+      Back:         "返回"
+    index:
+      Listing products: "商品列表"
+      Show:             "显示"
+      Edit:             "编辑"
+      Destroy:          "消除"
+      sure:             "你确定吗？"
+      delete:           "删除"
+      New product:      "新商品"
+    new:
+      Back:             "返回"    
+    show:
+      add_html:     "加入购物车"  
+      Add to cart:      "加入购物车"
+      Inventory:        "库存"
+      Comment:          "评论"
+      Send comment on my own:  "自己评论！"
+      Title:            "标题"
+      Context:          "内容"
+      Score:            "评分"  
+  categories:
+    form:
+      errors:       "个错误"
+      prohibited this category from being saved:   "导致分类无法保存"
+    edit:
+      Show:         "显示"
+      Back:         "返回"
+    index:
+      My Categories:  "我的分类"
+    new:
+      Back:         "返回"
+    show:
+      Name:         "姓名:"
+      Parentid:     "父节点标签:"
+      Edit:         "编辑"
+      Back:         "返回"
+  comments:
+    form:
+      errors:       "个错误"
+      prohibited this comment from being saved:   "阻碍这条评论被保存"
+      title:        "标题"
+      context:      "内容"
+      product_id:   "商品标签"
+      create_at:    "生产于"
+    edit:
+      Show:         "显示"
+      Back:         "返回"
+    index:
+      Listing comments:   "评论列表"
+      Title:              "标题"
+      Context:            "内容"
+      Products:           "商品"
+      Create at:          "出自于"
+      Show:               "显示"
+      Edit:               "编辑"
+      Destroy:            "消除"
+      sure:               "你确定吗？"
+      New Comment:        "新的评论"
+    new:
+      Back:               "返回"
+    show:
+      Title:              "标题"
+      Context:            "内容"
+      Product:            "产品"
+      Create at:          "出自于"
+      Edit:               "编辑"
+      Back:               "返回"
+  questions:
+    Questions:            "问题"
+  sessions:
+    new:
+      Login:              "登入"
+      Name:               "用户名"
+      Password:           "密码"
+  subcategories:
+    form:
+      prohibited this subcategory from being saved: "prohibited this subcategory from being saved"
+      name:                 "name"
+      parent:               "parent"
+    edit:
+      Show:                 "显示"
+      Back:                 "返回"
+    index:
+      Add to cart:          "加入购物车"
+    new:
+      Back:                 "返回"
+    show:
+      Name:                 "名字:"
+      Parent:               "父类:"
+      Edit:                 "编辑"
+      Back:                 "返回"
+
+  contacts:  
+      Contacts:             "联系"
+  help:
+    index:
+      Help:                  "帮助"
+  users:
+    form:
+      prohibited this user from being saved:  "阻碍这个用户被保存"
+      Enter User Details:    "输入用户详细信息"
+      name:                "姓名"
+      password:            "密码"
+      password_confirmation:  "密码确认"
+    edit:
+      Show:                "显示"
+      Back:                "返回"
+    index:
+      list users:          "用户列表"
+      Name:                "用户名"
+      show:                "显示"
+      edit:                "编辑"
+      destroy:             "消除"
+      sure:                "你确定吗？"
+      new user:            "新建用户"
+    new:
+      Back:                "返回"
+    show:
+      Name:                "用户名:"
+      Hashed password:     "哈希密码:"
+      Salt:                "参数:"
+      Edit:                "编辑"
+      Back:                "返回"

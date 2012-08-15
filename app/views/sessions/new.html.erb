@@ -6,20 +6,20 @@
   <%= form_tag do %>
     <div class="form_content">
     	<!-- <legend>Please Log In</legend> -->
-        <div class="form_title">Login</div>
+        <div class="form_title"><%= t('.Login') %></div>
 
         <div class="form_item loginBox">
-          <label for="name">Name</label><span>:</span>
+          <label for="name"><%= t('.Name') %></label><span>:</span>
           <%= text_field_tag :name, params[:name] %>
         </div>
 
         <div class="form_item loginBox">
-          <label for="password">Password</label><span>:</span>
+          <label for="password"><%= t('.Password') %></label><span>:</span>
           <%= password_field_tag :password, params[:password] %>
         </div>
 
         <div class="button">
-          <%= submit_tag "Login" %>
+          <%= submit_tag t('.Login') %>
         </div>
     </div>
   <% end %>

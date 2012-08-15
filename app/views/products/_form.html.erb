@@ -1,7 +1,7 @@
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+      <h2><%= pluralize(@product.errors.count, t('.error')) %> <%= t('.prohibited this product from being saved') %></h2>
 
       <ul>
       <% @product.errors.full_messages.each do |msg| %>
@@ -12,27 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label t('.title') %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label t('.description') %><br />
     <%= f.text_area :description, :rows => 6, :cols => 40 %>
   </div>
   <div class="field">
-    <%= f.label :image_url %><br />
+    <%= f.label t('.image_url') %><br />
     <%= f.file_field :image_url %>
   </div>
   <div class="field">
-    <%= f.label :price %><br />
+    <%= f.label t('.price') %><br />
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :category_id %><br />
+    <%= f.label t('.category id')%><br />
     <%= f.text_field :cate %>
   </div>
   <div class="field">
-    <%= f.label :inventory %><br />
+    <%= f.label t('.inventory') %><br />
     <%= f.text_field :inventory %>
   </div>
   <div class="actions">

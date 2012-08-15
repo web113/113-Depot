@@ -16,16 +16,16 @@
       <%= button_to t('.add_html'), line_items_path(:product_id => @product,:modify => "false"),
          :remote => true %>
     <% else %>
-      <button class="need_to_login">Add to cart</button>
+      <button class="need_to_login"><%= t('.Add to cart') %></button>
     <% end %>
 
     <div class = "price_line">   
-    <span class = "inventory">Inventory:<%= @product.inventory%></span>
+    <span class = "inventory"><%= t('.Inventory') %><%= @product.inventory%></span>
     </div>
 </div>
 
 <div class = "comment">
-Comments:
+<%= t('.Comment') %>
 </div>
 <% @comments.each do |comment|%>
 <table class="product_detail">
@@ -64,20 +64,20 @@ Comments:
 
 <% if session[:user_id] %>
 <div class = "comment">
-Send Comments Of My Own~!:)
+<%= t('.Send comment on my own')%>
 </div>
 
 <%= form_for @comment do |f| %>
 <div class="field">
-    <%= f.label "Title" %><br />
+    <%= f.label t('Title') %><br />
     <%= f.text_field :title, :size => 40%>
   </div>
   <div class="field">
-    <%= f.label "Context" %><br />
+    <%= f.label t('Context') %><br />
     <%= f.text_area  :context,:rows => 3, :cols => 40 %>
   </div>
   <div class="field">
-    <%= f.label "Score" %><br />
+    <%= f.label t('Score') %><br />
     <%= f.select :score, Comment::SCORE_TYPES, :prompt => "Select a score" %>
   </div>
   <div class="actions">
