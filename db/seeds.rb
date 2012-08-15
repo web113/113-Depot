@@ -223,7 +223,7 @@ Product.create(:title => 'History of Religions',
   :image_url => '/images/historyofreligions.jpg',
   :price => 59.99,
   :cate =>'history;socialty;religion',
-  :category => 'Life')
+  :category => 'Culture')
 
 Product.create(:title => 'Sofies Verden',
   :description => 
@@ -236,7 +236,7 @@ Product.create(:title => 'Sofies Verden',
   :image_url => '/images/sofies.jpg',
   :price => 19.99,
   :cate =>'novel;philosophy',
-  :category => 'Life')
+  :category => 'Culture')
 
 Product.create(:title => 'Lessons for Students in Architecture',
   :description => 
@@ -246,6 +246,20 @@ Product.create(:title => 'Lessons for Students in Architecture',
   :image_url => '/images/architecture.jpg',
   :price => 69.99,
   :cate =>'architecture',
+  :category => 'Culture')
+
+Product.create(:title => 'Mrs.Dalloway',
+  :description => 
+    %{<p>
+         Virginia Woolf's Mrs. Dalloway, published in 1925, was a bestseller both in 
+         Britain and the United States despite its departure from typical novelistic 
+         style. Mrs. Dalloway and Woolf's subsequent book, To the Lighthouse, have 
+         generated the most critical attention and are the most widely studied of Woolf's
+         novels. 
+      </p>},
+  :image_url => '/images/woolf.jpg',
+  :price => 29.99,
+  :cate =>'travel',
   :category => 'Life')
 
 Product.create(:title => 'Harry Potter:Page to Screen',
@@ -255,7 +269,34 @@ Product.create(:title => 'Harry Potter:Page to Screen',
       </p>},
   :image_url => '/images/pagetoscreen.jpg',
   :price => 99.99,
-  :cate =>'novel;magic;movie',
+  :cate =>'magic;movie',
+  :category => 'Culture')
+
+Product.create(:title => 'One Hundred Years of Solitude',
+  :description => 
+    %{<p>
+         <em>One Hundred Years of Solitude</em> was a bestseller both in 
+         Britain and the United States despite its departure from typical novelistic 
+         style. Mrs. Dalloway and Woolf's subsequent book, To the Lighthouse, have 
+         generated the most critical attention and are the most widely studied of Woolf's
+         novels. 
+      </p>},
+  :image_url => '/images/solitude.jpg',
+  :price => 29.99,
+  :cate =>'photography',
+  :category => 'Life')
+
+Product.create(:title => 'Sports',
+  :description => 
+    %{<p>
+         Here is an exciting and informative guide to the history and rules of the 
+         world's major sports. Superb color photographs of modern and antique sports 
+         equipment offer a unique "eyewitness" view of the development of each game, 
+         its most exciting features, and the special skills needed by the players.
+      </p>},
+  :image_url => '/images/sports.jpg',
+  :price => 29.99,
+  :cate =>'sports',
   :category => 'Life')
 
 
