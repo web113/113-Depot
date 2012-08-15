@@ -1,3 +1,4 @@
+require 'will_paginate/array' 
 class SearchesController < ApplicationController
   skip_before_filter :isAdmin
   
@@ -28,7 +29,12 @@ class SearchesController < ApplicationController
     	     #@results = @results + Product.search(item)
          end
     	end
-        #@results = Product.search(@query)
+      @results = @results.paginate :page =>params[:page],:per_page => 5
+      
+      if @results.empty?
+         @results = Product.all
+         @results = @results.paginate :page =>params[:page],:per_page => 5
+      end
     end
   end
 end
