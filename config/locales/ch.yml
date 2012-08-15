@@ -22,7 +22,7 @@ ch:
   carts:
     cart:
       title:     "您的购物车"
-      empty:     "清空购物车"
+      Empty:     "您的购物车是空的"
       checkout:  "结账"
       Total:     "总额"
       empty:     "清空购物车"
@@ -125,6 +125,7 @@ ch:
       price:        "价格"
       category:  "分类栏目"
       inventory:    "库存" 
+      tag:          "标签"
     edit:
       Show:         "显示"
       Back:         "返回"
@@ -201,6 +202,7 @@ ch:
       Login:              "登入"
       Name:               "用户名"
       Password:           "密码"
+      Register:           "注册"
   subcategories:
     form:
       prohibited this subcategory from being saved: "prohibited this subcategory from being saved"
@@ -211,6 +213,7 @@ ch:
       Back:                 "返回"
     index:
       Add to cart:          "加入购物车"
+      add_html:             "加入购物车"
     new:
       Back:                 "返回"
     show:
@@ -227,13 +230,14 @@ ch:
   users:
     form:
       prohibited this user from being saved:  "阻碍这个用户被保存"
-      Enter User Details:    "输入用户详细信息"
+      User:    "用户"
       name:                "姓名"
-      password:            "密码"
-      password_confirmation:  "密码确认"
+      Password:            "密码"
+      Confirm:  "密码确认"
     edit:
       Show:                "显示"
       Back:                "返回"
+      Editing user:        "编辑用户信息"
     index:
       list users:          "用户列表"
       Name:                "用户名"
@@ -250,3 +254,10 @@ ch:
       Salt:                "参数:"
       Edit:                "编辑"
       Back:                "返回"
+  admin:
+    index:
+      Welcome:            "欢迎"
+      It:                 "现在是"
+      We have:            "我们有"
+      order:              "订单"
+      change the password:    "修改密码"

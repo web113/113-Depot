@@ -1,4 +1,4 @@
-<h1>Editing user</h1>
+<h1><%= t('.Editing user') %></h1>
 
 <%= render 'form' %>
 
@@ -6,8 +6,8 @@
 <br />
 
 <% if User.find_by_id(session[:user_id]).name == "admin" %>
-  <%= link_to 'Show', @user %> |
-  <%= link_to 'Back', users_path %>
+  <%= link_to t('.Show'), @user %> |
+  <%= link_to t('.Back'), users_path %>
 <% else %>
-  <%= link_to 'Back', admin_path %>
+  <%= link_to t('.Back'), admin_path %>
 <% end %>

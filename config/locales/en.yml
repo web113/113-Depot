@@ -22,10 +22,10 @@ en:
   carts:
     cart:
       title:     "Your Cart"
-      empty:     "Empty cart"
+      Empty:     "Your cart is empty."
       checkout:  "Checkout"
       Total:     "Total"
-      empty:     "Empty the cart"
+      empty:     "Empty cart"
       sure:      "Are you sure?"
     edit:
       Show:      "Show"
@@ -125,6 +125,7 @@ en:
       price:        "price"
       category id:  "category id"
       inventory:    "inventory"
+      tag:          "tag"
     edit:
       Show:         "Show"
       Back:         "Back"
@@ -201,6 +202,7 @@ en:
       Login:              "Login"
       Name:               "Name"
       Password:           "Password"
+      Register:           "Register"
   subcategories:
     form:
       prohibited this subcategory from being saved: "prohibited this subcategory from being saved"
@@ -211,6 +213,7 @@ en:
       Back:                 "Back"
     index:
       Add to cart:          "Add to cart"
+      add_html:             "Add to cart"
     new:
       Back:                 "Back"
     show:
@@ -230,13 +233,14 @@ en:
   users:
     form:
       prohibited this user from being saved:  "prohibited this user from being saved"
-      Enter User Details:    "Enter User Details"
+      User:    "User"
       name:                "name"
-      password:            "password"
-      password_confirmation:  "password_confirmation"      
+      Password:            "password"
+      Confirm:  "password_confirmation"      
     edit:
       Show:                "Show"
       Back:                "Back"
+      Editing user:        "Editing user"
     index:
       list users:          "list users"
       Name:                "Name"
@@ -253,3 +257,11 @@ en:
       Salt:                "Salt:"
       Edit:                "Edit"
       Back:                "Back"
+    
+  admin:
+    index:
+      Welcome:            "Welcome"
+      It:                 "It is"
+      We have:            "We have "
+      order:              "order"
+      change the password:     "change the password"

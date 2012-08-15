@@ -14,31 +14,31 @@
   <% end %>
 
   <div class="form_item">
-    <%= f.label :title, t(".title") + ":" %><br />
+    <%= f.label  t(".title") + ":" %><br />
     <%= f.text_field :title %>
   </div>
   <div class="form_item">
-    <%= f.label :description, t(".description") + ":" %><br />
+    <%= f.label  t(".description") + ":" %><br />
     <%= f.text_area :description, :rows => 6, :cols => 40 %>
   </div>
   <div class="form_item">
-    <%= f.label :image_url, t(".image_url") + ":" %><br />
+    <%= f.label  t(".image_url") + ":" %><br />
     <%= f.file_field :image_url %>
   </div>
   <div class="form_item">
-    <%= f.label :price, t(".price") + ":" %><br />
+    <%= f.label  t(".price") + ":" %><br />
     <%= f.text_field :price %>
   </div>
   <div class="form_item">
-    <%= f.label :category %><br />
+    <%= f.label t(".category") + ":" %><br />
     <%= f.select :category, Product::CATE_TYPES, :prompt => "Select a category"  %>
   </div>
   <div class="form_item">
-    <%= f.label :tag %><br />
+    <%= f.label t(".tag") + ":"%><br />
     <%= f.text_field :cate %>
   </div>
   <div class="form_item">
-    <%= f.label :inventory, t(".inventory") + ":" %><br />
+    <%= f.label  t(".inventory") + ":" %><br />
     <%= f.text_field :inventory %>
   </div>
   <div class="button">
