@@ -4,7 +4,8 @@ class SearchesController < ApplicationController
   
   def index
   	@cart = current_cart
-    if params[:q]
+    @test = params[:q]
+    if params[:q].length != 0
     	@query = params[:q]
     	q_item = @query.split(" ")
     	#@results = Product.search(@query)
@@ -32,9 +33,11 @@ class SearchesController < ApplicationController
       @results = @results.paginate :page =>params[:page],:per_page => 5
       
       if @results.empty?
-         @results = Product.all
-         @results = @results.paginate :page =>params[:page],:per_page => 5
+         @notice = "Oooops, no match. Please try again"
       end
+    else
+      @results = Product.all
+      @results = @results.paginate :page =>params[:page],:per_page => 5
     end
   end
 end

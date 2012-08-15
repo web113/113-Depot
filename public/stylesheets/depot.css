@@ -25,9 +25,11 @@
 
 #product_list table {
   border-collapse: collapse;
-    -moz-border-radius: 10px;
+  -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
+  margin:auto;
+  width: 800px;
 }
 
 #product_list table tr td {
@@ -41,7 +43,7 @@
 }
 
 #product_list .list_description {
-  width:        60%;
+  width:        80%;
 }
 
 #product_list .list_description dl {
@@ -729,20 +731,24 @@ h1 span {
   display: inline-block;
   text-decoration: none;
   padding: 1px;
-  color: #1F7A1F;
-  background-color: #8EDC28;
+  /*color: #1F7A1F;*/
+  color: #ba8507;
+  /*background-color: #8EDC28;*/
+  background-color: #ffef99;
   border-right: 1px solid #3B6A00;
   border-bottom: 1px solid #2B4A03;
   margin-right: 2px;
 }
 
 .label a:visited {
-  color: #1F7A1F;
-  background-color: #8EDC28;
+  /*color: #1F7A1F;*/
+  color: #943f00;
+  /*background-color: #8EDC28;*/
+  background-color: #ffef99;
 }
 
 .label a:hover {
-  color: #8EDC28;
+  color: #943f00;
   background-color: #1F7A1F;
 }
 
