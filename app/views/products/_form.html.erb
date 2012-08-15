@@ -31,7 +31,7 @@
   </div>
   <div class="form_item">
     <%= f.label t(".category") + ":" %><br />
-    <%= f.text_field :category %>
+    <%= f.select :category, Product::CATE_TYPES, :prompt => "Select a category"  %>
   </div>
   <div class="form_item">
     <%= f.label t(".tag") + ":"%><br />
