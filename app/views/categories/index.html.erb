@@ -1,30 +1,16 @@
 <h1><%= t('.My Categories') %></h1>
 
 <div>
-  
-  <% @categories.each do |category| %>
-  <div class="category">
-     <p><%= category.name %></p>
-  </div>
-  <div class="label">
-   <% @subcategories.each do |subcategory|%>
-       <% if subcategory.parent == category.name%>
-            <!--<p><%= subcategory.name %><p>-->
-            <%= link_to ((subcategory.name), {:controller => "subcategories", :action => "index", :subcate => subcategory.name} )%>    
-       <% end %>
+  <% for category in @categories %>
+    <div class="category">
+       <p><%= category.name %></p>
+    </div>
+    <div class="label">
+    <% for cate in @labels[category] %>
+      <%= link_to (cate), {:controller => "subcategories", :action => "index",:subcate => cate } %>
+    <% end %>
+    </div>
   <% end %>
-  <% @products.each do |product|%>
-       <% if product.category == category.name%>
-           <%allcates = product.cate.split(";") %>
-           <%for cate in allcates%>
-               <%if cate != nil%>
-                  <%= link_to (cate), {:controller => "subcategories", :action => "index",:subcate => cate } %>
-               <%end%>
-           <%end%>    
-       <% end %>
-  <% end %>
-  </div>
-   <% end %>
 </div>
 
 <br />

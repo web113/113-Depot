@@ -55,7 +55,7 @@ class UsersController < ApplicationController
       if @user.save
         Cart.create(:user_id => @user.id)
         if session[:user_id] && User.find_by_id(session[:user_id]).name == "admin"
-          format.html { redirect_to(users_url, :notice => "User #{@user.name} was successfully created.") }
+          format.html { redirect_to(users_url, :alert => "User #{@user.name} was successfully created.") }
         else
           format.html { redirect_to(login_url, :alert => "User #{@user.name} was successfully created.") }
         end
@@ -75,7 +75,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         if User.find_by_id(session[:user_id]).name == "admin"
-          format.html { redirect_to(users_url, :notice => "User #{@user.name} was successfully updated.") }
+          format.html { redirect_to(users_url, :alert => "User #{@user.name} was successfully updated.") }
         else
           format.html { redirect_to(admin_url, :alert => "User #{@user.name} was successfully updated.") }
         end
@@ -94,9 +94,9 @@ class UsersController < ApplicationController
 
     begin
       @user.destroy
-      flash[:notice] = "User #{@user.name} deleted"
+      flash[:alert] = "User #{@user.name} deleted"
     rescue Exception => e
-      flash[:notice] = e.message
+      flash[:alert] = e.message
     end
 
     respond_to do |format|

@@ -128,5 +128,5 @@ var showResult = function(result) {
 
 var register = function() {
   var url = "http://" + location.host + "/users/new";
-  location.href = url;
+  location.href = url + location.search;
 };

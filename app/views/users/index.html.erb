@@ -1,3 +1,7 @@
+<% if flash[:alert] %>
+  <p id="notice"><%= flash[:alert] %></p>
+<% end %>
+
 <h1><%= t('.list users')%></h1>
 
 <table>

@@ -6,9 +6,9 @@ class CategoriesController < ApplicationController
   # GET /categories.xml
   def index
     @categories = Category.all
-    @subcategories = Subcategory.all
     @cart = current_cart
     @products = Product.all
+    @labels = getLabels(@categories, @products)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -86,4 +86,25 @@ class CategoriesController < ApplicationController
   #    format.xml  { head :ok }
   #  end
   #end
+  #
+  def getLabels(categories, products)
+    labels = {}
+    for category in categories
+      labels[category] = []
+      vis = {}
+      for product in products
+        if product.category == category.name
+          allcates = product.cate.split(";")
+          for cate in allcates
+            cate.strip!
+            if cate != nil && vis[cate] == nil
+              vis[cate] = true
+              labels[category] << cate
+            end
+          end
+        end
+      end
+    end
+    return labels
+  end
 end
