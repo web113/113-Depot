@@ -61,12 +61,14 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
+    @cart = current_cart
   end
 
   # POST /products
   # POST /products.xml
   def create
     @product = Product.new(params[:product])
+    @cart = current_cart
 
     respond_to do |format|
       if @product.save

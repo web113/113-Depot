@@ -9,6 +9,7 @@ jq(document).ready(function() {
   jq(".need_to_login").click(login);
   jq("#to_logout").click(logout);
   jq("#searchButton").click(search);
+  jq("#register").click(register);
 });
 
 var setElementHoverEffect = function(element) {
@@ -123,4 +124,9 @@ var showResult = function(result) {
   if (result != "true") {
     alert("Sorry, we haven't got enough books for you to buy!");
   }
+};
+
+var register = function() {
+  var url = "http://" + location.host + "/users/new";
+  location.href = url;
 };

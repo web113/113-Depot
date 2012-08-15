@@ -9,33 +9,35 @@
       <% end %>
       </ul>
     </div>
+
+    <br />
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
+  <div class="form_item">
+    <%= f.label :title, t(".title") + ":" %><br />
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br />
+  <div class="form_item">
+    <%= f.label :description, t("description") + ":" %><br />
     <%= f.text_area :description, :rows => 6, :cols => 40 %>
   </div>
-  <div class="field">
-    <%= f.label :image_url %><br />
+  <div class="form_item">
+    <%= f.label :image_url, t(".image_url") + ":" %><br />
     <%= f.file_field :image_url %>
   </div>
-  <div class="field">
-    <%= f.label :price %><br />
+  <div class="form_item">
+    <%= f.label :price, t(".price") + ":" %><br />
     <%= f.text_field :price %>
   </div>
-  <div class="field">
-    <%= f.label :category_id %><br />
+  <div class="form_item">
+    <%= f.label :category_id, t(".category") + ":" %><br />
     <%= f.text_field :cate %>
   </div>
-  <div class="field">
-    <%= f.label :inventory %><br />
+  <div class="form_item">
+    <%= f.label :inventory, t(".inventory") + ":" %><br />
     <%= f.text_field :inventory %>
   </div>
-  <div class="actions">
+  <div class="button">
     <%= f.submit %>
   </div>
 <% end %>

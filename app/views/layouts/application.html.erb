@@ -66,10 +66,10 @@
                 <% end %>
               <% end %>
               <li><%= link_to 'Help', {:controller => "help", :action => "index" } %></li>
-              <li><%= link_to t('.news'), {:controller => "news", :action => "index" } %></li>
               <% unless session[:user_id] %>
                 <li id="login"><%= link_to 'Login', {:controller => "sessions", :action => "new" } %><li>
               <% else %>
+                <li><a href="/admin"><%= User.find_by_id(session[:user_id]).name %></a></li>
                 <li><div id="to_logout">Logout</div></li>
               <% end %>
             </ul>

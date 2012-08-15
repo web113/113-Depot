@@ -2,5 +2,12 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<br />
+<br />
+
+<% if User.find_by_id(session[:user_id]).name == "admin" %>
+  <%= link_to 'Show', @user %> |
+  <%= link_to 'Back', users_path %>
+<% else %>
+  <%= link_to 'Back', admin_path %>
+<% end %>
