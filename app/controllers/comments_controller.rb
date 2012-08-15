@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  skip_before_filter :isAdmin, :only => [:index, :show, :new, :create]
   # GET /comments
   # GET /comments.xml
   def index
@@ -50,7 +51,9 @@ class CommentsController < ApplicationController
                                           :notice => 'Comment was successfully created.') }
         format.xml  { render :xml => @comment, :status => :created, :location => @comment }
       else
-        format.html { render :action => "new" }
+        #format.html { render :action => "new" }
+        format.html { redirect_to(url_for(:controller => "products", :action => "show", :id => @comment.product_id),
+                                          :notice => 'Oooooops!!') }
         format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
       end
     end

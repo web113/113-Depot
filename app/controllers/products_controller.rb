@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   skip_before_filter :authorize
+  skip_before_filter :isAdmin, :only => [:index, :show]
 
   # GET /products
   # GET /products.xml
