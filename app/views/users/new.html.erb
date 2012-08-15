@@ -1,5 +1,9 @@
-<h1>New user</h1>
 
 <%= render 'form' %>
 
-<%= link_to t('.Back'), users_path %>
+<br />
+<br />
+
+<% if session[:user_id] && User.find_by_id(session[:user_id]).name == "admin" %>
+  <%= link_to 'Back', users_path %>
+<% end %>

@@ -1,7 +1,7 @@
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, t('.error')) %> <%= t('.prohibited this product from being saved') %></h2>
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
       <ul>
       <% @product.errors.full_messages.each do |msg| %>
@@ -9,37 +9,35 @@
       <% end %>
       </ul>
     </div>
+
+    <br />
   <% end %>
 
-  <div class="field">
-    <%= f.label t('.title') %><br />
+  <div class="form_item">
+    <%= f.label :title, t(".title") + ":" %><br />
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label t('.description') %><br />
+  <div class="form_item">
+    <%= f.label :description, t(".description") + ":" %><br />
     <%= f.text_area :description, :rows => 6, :cols => 40 %>
   </div>
-  <div class="field">
-    <%= f.label t('.image_url') %><br />
+  <div class="form_item">
+    <%= f.label :image_url, t(".image_url") + ":" %><br />
     <%= f.file_field :image_url %>
   </div>
-  <div class="field">
-    <%= f.label t('.price') %><br />
+  <div class="form_item">
+    <%= f.label :price, t(".price") + ":" %><br />
     <%= f.text_field :price %>
   </div>
-  <div class="field">
-    <%= f.label :category %><br />
-    <%= f.text_field :category %>
-  </div>
-  <div class="field">
-    <%= f.label :tag %><br />
+  <div class="form_item">
+    <%= f.label :category_id, t(".category") + ":" %><br />
     <%= f.text_field :cate %>
   </div>
-  <div class="field">
-    <%= f.label t('.inventory') %><br />
+  <div class="form_item">
+    <%= f.label :inventory, t(".inventory") + ":" %><br />
     <%= f.text_field :inventory %>
   </div>
-  <div class="actions">
+  <div class="button">
     <%= f.submit %>
   </div>
 <% end %>

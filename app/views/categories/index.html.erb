@@ -3,10 +3,10 @@
 <div>
   
   <% @categories.each do |category| %>
-  <div>
+  <div class="category">
      <p><%= category.name %></p>
   </div>
-  <div>
+  <div class="label">
    <% @subcategories.each do |subcategory|%>
        <% if subcategory.parent == category.name%>
             <!--<p><%= subcategory.name %><p>-->

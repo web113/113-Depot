@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   skip_before_filter :authorize, :only => [:new, :create]
   skip_before_filter :isAdmin
   before_filter :isShipped, :only => [:edit, :destroy]
+  before_filter :isOwner, :only => [:show, :edit, :destroy]
 
   # GET /orders
   # GET /orders.xml
@@ -65,6 +66,7 @@ class OrdersController < ApplicationController
   def edit
     @order = Order.find(params[:id])
     @cart = current_cart
+    @id = params[:id]
   end
 
   # POST /orders
@@ -121,7 +123,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.update_attributes(params[:order])
-        format.html { redirect_to(@order, :notice => 'Order was successfully updated.') }
+        format.html { redirect_to(orders_url, :alert => 'Order was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -157,6 +159,13 @@ class OrdersController < ApplicationController
   protected
     def isShipped
       unless params[:id] && Order.find(params[:id]).shipped == 0
+        redirect_to permission_url
+      end
+    end
+
+  protected
+    def isOwner
+      unless User.find_by_id(session[:user_id]).name == "admin" || session[:user_id] == Order.find(params[:id]).user.id
         redirect_to permission_url
       end
     end

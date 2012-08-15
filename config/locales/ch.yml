@@ -123,7 +123,7 @@ ch:
       description:  "描述"
       image_url:    "图片地址"
       price:        "价格"
-      category id:  "分类栏目"
+      category:  "分类栏目"
       inventory:    "库存" 
     edit:
       Show:         "显示"

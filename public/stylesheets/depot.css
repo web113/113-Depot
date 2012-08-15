@@ -724,3 +724,48 @@ h1 span {
   font-size: 13px;
   margin-left: 15px;
 }
+
+.label a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 1px;
+  color: #1F7A1F;
+  background-color: #8EDC28;
+  border-right: 1px solid #3B6A00;
+  border-bottom: 1px solid #2B4A03;
+  margin-right: 2px;
+}
+
+.label a:visited {
+  color: #1F7A1F;
+  background-color: #8EDC28;
+}
+
+.label a:hover {
+  color: #8EDC28;
+  background-color: #1F7A1F;
+}
+
+.category p {
+  color: rgb(34, 34, 119);
+  font-size: 18px;
+}
+
+h3 span {
+  color: #44A;
+  font-size: 14px;
+}
+
+.choice {
+  background-color: yellow;
+}
+
+.loginButton {
+  float: right;
+  margin-right: 150px;
+}
+
+.registerButton {
+  float: left;
+  margin-left: 150px;
+}

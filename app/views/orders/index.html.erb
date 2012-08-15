@@ -1,5 +1,9 @@
 <h1><%= t('.Listing orders') %></h1>
 
+<% if flash[:alert] %>
+  <p id="notice"><%= flash[:alert] %></p>
+<% end %>
+
 <% @orders.each do |order| %>
 <table class="order_detail">
 <tr class="imfo">
