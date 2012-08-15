@@ -48,8 +48,10 @@ Product.create(:title => 'Rails Test Prescriptions',
 Product.create(:title => 'The Curious Case of Benjamin Button',
   :description => 
     %{<p>
-        <em>The Curious Case of Benjamin Button</em> is a story about....
-        blablabla...
+        <em>Benjamin Button</em> is born with the physical appearance of a 70-year-old man,
+         already able to speak. His father Roger invites neighborhood boys to play with 
+         him and orders him to play with children's toys, but Benjamin only obeys to please
+         his father.
       </p>},
   :image_url => '/images/benjamin.jpg',
   :price => 23.75,
@@ -60,8 +62,10 @@ Product.create(:title => 'The Curious Case of Benjamin Button',
 Product.create(:title => 'Debug It!',
   :description => 
     %{<p>
-        <em>Debug It!</em> is a story about....
-        blablabla...
+        If you develop software, sooner or later you're going to discover that it 
+        doesn't always behave as you intended. Working out why it's misbehaving can be 
+        hard. Sometimes very hard. Debug It! is here to help! All bugs are different: 
+        there is no silver bullet. 
       </p>},
   :image_url => '/images/debug.jpg',
   :price => 19.99,
@@ -72,8 +76,10 @@ Product.create(:title => 'Debug It!',
 Product.create(:title => 'Lowboy',
   :description => 
     %{<p>
-        <em>Lowboy</em> is a story about....
-        blablabla...
+        Early one morning in New York City, Will Heller, a sixteen-yearold paranoid 
+        schizophrenic, gets on an uptown B train alone. Like most people he knows, Will 
+        believes the world is being destroyed by climate change; unlike most people, 
+        he's convinced he can do something about it. 
       </p>},
   :image_url => '/images/lowboy.jpg',
   :price => 22.99,
@@ -84,8 +90,10 @@ Product.create(:title => 'Lowboy',
 Product.create(:title => 'Waterfront',
   :description => 
     %{<p>
-        <em>Waterfront</em> is a story about....
-        blablabla...
+       GameMastery Map Pack: Waterfront contains 18 full-color, 5 x 8-inch map tiles, 
+       stunningly crafted by cartographer Corey Macourek, that combine to form a variety 
+       of locations in the harbor district of a large city. Locations Include: Harbor Piers,
+        Harbormaster's Office, Fishing Boat, Merchant Cog, and a Dockside Warehouse.
       </p>},
   :image_url => '/images/waterfront.jpg',
   :price => 11.99,
@@ -241,7 +249,13 @@ Product.create(:title => 'Sofies Verden',
 Product.create(:title => 'Lessons for Students in Architecture',
   :description => 
     %{<p>
-         <em>Lessons for Students in Architecture</em> is talking about......
+         <em>Lessons for Students in Architecture</em> is talking about public domain: 
+　　1. Public and Private 
+　　2. territorial claims 
+　　3. territorial differentiation 
+　　4. Territorial zoning 
+　　5. From user to Dweller 
+
       </p>},
   :image_url => '/images/architecture.jpg',
   :price => 69.99,
@@ -265,7 +279,10 @@ Product.create(:title => 'Mrs.Dalloway',
 Product.create(:title => 'Harry Potter:Page to Screen',
   :description => 
     %{<p>
-         <em>Harry Potter:Page to Screen</em> is talking about......
+         <em>Harry Potter:Page to Screen</em> opens the doors to Hogwarts castle and the 
+         wizarding world of Harry Potter to reveal the complete behind-the-scenes secrets, 
+         techniques, and over-the-top artistry that brought J.K. Rowling’s acclaimed novels 
+         to cinematic life.
       </p>},
   :image_url => '/images/pagetoscreen.jpg',
   :price => 99.99,
