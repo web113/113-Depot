@@ -777,3 +777,11 @@ h3 span {
   float: left;
   margin-left: 150px;
 }
+
+.user .form_item label {
+  width: 75px;
+}
+
+.user .form_item {
+  width: 310px; 
+}
