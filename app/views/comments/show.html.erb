@@ -1,25 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <b><%= t('.Title') %></b>
   <%= @comment.title %>
 </p>
 
 <p>
-  <b>Context:</b>
+  <b><%= t('.Context') %></b>
   <%= @comment.context %>
 </p>
 
 <p>
-  <b>Product:</b>
+  <b><%= t('.Product') %></b>
   <%= @comment.product_id %>
 </p>
 
 <p>
-  <b>Create at:</b>
+  <b><%= t('.Create at') %></b>
   <%= @comment.create_at %>
 </p>
 
 
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+<%= link_to t('.Edit'), edit_comment_path(@comment) %> |
+<%= link_to t('.Back'), comments_path %>

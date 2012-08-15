@@ -5,12 +5,12 @@
     
     <% unless cart.line_items.empty? %>
       <tr class="total_line">
-          <td class="total" colspan = "2">Total</td>
+          <td class="total" colspan = "2"><%= t('.Total') %></td>
           <td class = "total_cell"><%= number_to_currency(cart.total_price)%></td>   	
       </tr>
     <% else %>
       <tr class="empty_cart">
-        <td>Your cart is empty!</td>
+        <td><%= t('.empty') %></td>
       </tr>
     <% end %>
 </table>
@@ -24,7 +24,7 @@
   <div id="empty">
     <!--添加清空购物车的按钮-->
     <%= button_to t('.empty'), cart, :method => :delete,
-      :confirm => 'Are you sure?' %>
+      :confirm => t('.sure') %>
     </div>
 </div>
 

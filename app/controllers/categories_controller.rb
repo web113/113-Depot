@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
     @categories = Category.all
     @subcategories = Subcategory.all
     @cart = current_cart
+    @products = Product.all
 
     respond_to do |format|
       format.html # index.html.erb
