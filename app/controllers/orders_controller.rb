@@ -136,6 +136,18 @@ class OrdersController < ApplicationController
   # DELETE /orders/1.xml
   def destroy
     @order = Order.find(params[:id])
+    @line_items = LineItem.all
+          @products = Product.all
+          for lineitem in @line_items 
+            if lineitem.order_id == @order.id
+              for product in @products
+                if  product.id == lineitem.product_id
+                  product.inventory = product.inventory - lineitem.quantity                     
+                  product.save
+                end
+              end
+            end    
+          end
     @order.destroy
 
     respond_to do |format|
