@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+  <p id="notice"><%= flash[:notice] %></p>
+<% end %>
+
 <div class = "entry">
     <div class="entry_pic">
       <%= link_to (image_tag(@product.image_url)),{:controller => "products", :action => "show",:id => @product.id } %>
@@ -79,10 +83,6 @@
 <% end %>
 
 <% if session[:user_id] %>
-<% if flash[:notice] %>
-  <p id="notice"><%= flash[:notice] %></p>
-<% end %>
-
 <div class = "comment">
   <%= t(".Send Comment Of My Own") %>~!:)
 </div>

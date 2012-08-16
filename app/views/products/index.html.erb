@@ -21,7 +21,7 @@
         <%= link_to t('.Edit'), edit_product_path(product) %><br/>
         <%= link_to t('.Destroy'), product, 
                     :confirm => t('.sure'),
-                    :method => t('.delete') %>
+                    :method => :delete %>
       </td>
     </tr>
   <% end %>

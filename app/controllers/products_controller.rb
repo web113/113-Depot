@@ -68,7 +68,19 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.xml
   def create
-    @product = Product.new(params[:product])
+    if params[:product][:image_url].nil?
+      filename = "book.jpg"
+    else
+      filename = uploadFile(params[:product][:image_url])
+    end
+    @product = Product.new(
+      :title => params[:product][:title], 
+      :description => params[:product][:description], 
+      :image_url => "/images/#{filename}", 
+      :price => params[:product][:price], 
+      :category => params[:product][:category], 
+      :cate => params[:product][:cate]
+    )
     @cart = current_cart
 
     respond_to do |format|
@@ -118,4 +130,21 @@ class ProductsController < ApplicationController
     end
   end
   
+  def uploadFile(file)
+    if !file.original_filename.empty?
+      @filename = getFileName(file.original_filename)
+      if @filename =~ /\.(gif|jpg|png)$/
+        File.open("#{RAILS_ROOT}/public/images/#{@filename}", "wb") do |f|
+          f.write(file.read)
+        end
+      end
+      return @filename
+    end
+  end
+
+  def getFileName(filename)
+    if !filename.nil?
+      Time.now.strftime("%Y_%m_%d_%H_%M_%S") + '_' + filename
+    end
+  end
 end
